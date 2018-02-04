@@ -16,27 +16,31 @@ class Store {
     var urlComponents: URLComponents? {
         didSet {
             if let components = urlComponents, let host = components.host {
-                DispatchQueue.main.async { [weak self] in
-                    self?.headerModel.imageURL = try? Router.favicon(domain: host) .asURL()
-                    self?.headerModel.titleLable.text = host
-                }
+                headerModel.setValue(imageURL: try! Router.favicon(domain: host) .asURL(),
+                                     address: host)
+                loginInfoModel.initializeKeychain(server: host,
+                                                  protocal: components.scheme!)
             }
         }
     }
     static var shared: Store!
+    // View-Models
     let headerModel = HeaderViewModel()
+    let loginInfoModel = LoginInfoModel()
 
     private init(context ctx: NSExtensionContext) {
         context = ctx
-        for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
-            for case let itemProvider as NSItemProvider in obj.attachments! where itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
-                itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String,
-                                      options: nil) { item, _ in
-                                        if let results = item as? NSDictionary,
-                                            let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                                            let baseURI = info["url"] as? String  {
-                                            self.urlComponents = URLComponents(string: baseURI)
-                                        }
+        DispatchQueue.global().async {
+            for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
+                for case let itemProvider as NSItemProvider in obj.attachments! where itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
+                    itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String,
+                                          options: nil) { item, _ in
+                                            if let results = item as? NSDictionary,
+                                                let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+                                                let baseURI = info["url"] as? String  {
+                                                self.urlComponents = URLComponents(string: baseURI)
+                                            }
+                    }
                 }
             }
         }

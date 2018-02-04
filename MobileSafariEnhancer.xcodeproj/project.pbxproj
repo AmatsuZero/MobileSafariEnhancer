@@ -29,6 +29,13 @@
 		218F518820269B3E006EEDC2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F518720269B3E006EEDC2 /* LoadingView.swift */; };
 		218F518A2026A1D6006EEDC2 /* GDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51892026A1D6006EEDC2 /* GDC.swift */; };
 		218F518D2026B2CE006EEDC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F518C2026B2CE006EEDC2 /* LoginViewController.swift */; };
+		218F518F2026B43A006EEDC2 /* owl-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 218F518E2026B43A006EEDC2 /* owl-login.png */; };
+		218F51912026B449006EEDC2 /* owl-login-arm-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 218F51902026B449006EEDC2 /* owl-login-arm-left.png */; };
+		218F51932026B457006EEDC2 /* owl-login-arm-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 218F51922026B457006EEDC2 /* owl-login-arm-right.png */; };
+		218F51952026B545006EEDC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51942026B545006EEDC2 /* LoginView.swift */; };
+		218F519A2026B767006EEDC2 /* LoginInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51992026B767006EEDC2 /* LoginInfoModel.swift */; };
+		218F51A02026D158006EEDC2 /* ResourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F519F2026D158006EEDC2 /* ResourceParser.swift */; };
+		218F51A22026F7CD006EEDC2 /* owl-hand.png in Resources */ = {isa = PBXBuildFile; fileRef = 218F51A12026F7CD006EEDC2 /* owl-hand.png */; };
 		21B9AAD82025ADE7006002DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9AAD72025ADE7006002DD /* AppDelegate.swift */; };
 		21B9AADA2025ADE7006002DD /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9AAD92025ADE7006002DD /* DocumentBrowserViewController.swift */; };
 		21B9AADC2025ADE7006002DD /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9AADB2025ADE7006002DD /* DocumentViewController.swift */; };
@@ -36,6 +43,7 @@
 		21B9AAE12025ADE7006002DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B9AADF2025ADE7006002DD /* Main.storyboard */; };
 		21B9AAE32025ADE7006002DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B9AAE22025ADE7006002DD /* Assets.xcassets */; };
 		21B9AAE62025ADE7006002DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B9AAE42025ADE7006002DD /* LaunchScreen.storyboard */; };
+		21F8589B20274A36008D84B8 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8589A20274A36008D84B8 /* SettingTableViewController.swift */; };
 		2F9DD69FF80F1D24446E8D0D /* Pods_FileSharer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4107EB96219ADA2326E75B73 /* Pods_FileSharer.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +97,15 @@
 		218F518720269B3E006EEDC2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		218F51892026A1D6006EEDC2 /* GDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDC.swift; sourceTree = "<group>"; };
 		218F518C2026B2CE006EEDC2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		218F518E2026B43A006EEDC2 /* owl-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login.png"; sourceTree = "<group>"; };
+		218F51902026B449006EEDC2 /* owl-login-arm-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login-arm-left.png"; sourceTree = "<group>"; };
+		218F51922026B457006EEDC2 /* owl-login-arm-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login-arm-right.png"; sourceTree = "<group>"; };
+		218F51942026B545006EEDC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		218F51992026B767006EEDC2 /* LoginInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoModel.swift; sourceTree = "<group>"; };
+		218F519B2026D00E006EEDC2 /* MobileSafariEnhancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileSafariEnhancer.entitlements; sourceTree = "<group>"; };
+		218F519C2026D049006EEDC2 /* FileSharer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FileSharer.entitlements; sourceTree = "<group>"; };
+		218F519F2026D158006EEDC2 /* ResourceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceParser.swift; sourceTree = "<group>"; };
+		218F51A12026F7CD006EEDC2 /* owl-hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-hand.png"; sourceTree = "<group>"; };
 		21B9AAD42025ADE6006002DD /* MobileSafariEnhancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSafariEnhancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B9AAD72025ADE7006002DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B9AAD92025ADE7006002DD /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +115,7 @@
 		21B9AAE22025ADE7006002DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21B9AAE52025ADE7006002DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21B9AAE72025ADE7006002DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F8589A20274A36008D84B8 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2987BAD7E4075A33AD4CD378 /* Pods-MobileSafariEnhancer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSafariEnhancer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer.debug.xcconfig"; sourceTree = "<group>"; };
 		4107EB96219ADA2326E75B73 /* Pods_FileSharer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FileSharer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AE3F0F1C0D37D0B6234C30 /* Pods-MobileSafariEnhancer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSafariEnhancer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +145,8 @@
 		218F51442025AF1B006EEDC2 /* FileSharer */ = {
 			isa = PBXGroup;
 			children = (
+				218F519C2026D049006EEDC2 /* FileSharer.entitlements */,
+				218F519E2026D12B006EEDC2 /* Utils */,
 				218F51712025F541006EEDC2 /* Resources */,
 				218F51592025D8EB006EEDC2 /* Extensions */,
 				218F51582025D5F5006EEDC2 /* Model */,
@@ -147,6 +167,7 @@
 				218F518C2026B2CE006EEDC2 /* LoginViewController.swift */,
 				218F51632025DFBC006EEDC2 /* TaskListTableViewController.swift */,
 				218F51652025E4C8006EEDC2 /* MainViewController.swift */,
+				21F8589A20274A36008D84B8 /* SettingTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +179,7 @@
 				218F517B2026111B006EEDC2 /* CreateTaskView.swift */,
 				218F517D20261D07006EEDC2 /* Preview.swift */,
 				218F518720269B3E006EEDC2 /* LoadingView.swift */,
+				218F51942026B545006EEDC2 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,9 +187,9 @@
 		218F51582025D5F5006EEDC2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				218F51982026B74C006EEDC2 /* ViewModel */,
 				218F51672025E995006EEDC2 /* Constants.swift */,
 				218F516B2025EBB0006EEDC2 /* ErrorEnum.swift */,
-				218F516D2025F484006EEDC2 /* HeaderViewModel.swift */,
 				218F51742025F6BC006EEDC2 /* Store.swift */,
 				218F51792025FDDC006EEDC2 /* Network.swift */,
 			);
@@ -189,8 +211,29 @@
 				218F518320262683006EEDC2 /* jquery.js */,
 				218F51722025F54F006EEDC2 /* favicons.png */,
 				218F51772025F9AB006EEDC2 /* tool.js */,
+				218F518E2026B43A006EEDC2 /* owl-login.png */,
+				218F51902026B449006EEDC2 /* owl-login-arm-left.png */,
+				218F51922026B457006EEDC2 /* owl-login-arm-right.png */,
+				218F51A12026F7CD006EEDC2 /* owl-hand.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		218F51982026B74C006EEDC2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				218F516D2025F484006EEDC2 /* HeaderViewModel.swift */,
+				218F51992026B767006EEDC2 /* LoginInfoModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		218F519E2026D12B006EEDC2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				218F519F2026D158006EEDC2 /* ResourceParser.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		21B9AACB2025ADE6006002DD = {
@@ -216,6 +259,7 @@
 		21B9AAD62025ADE6006002DD /* MobileSafariEnhancer */ = {
 			isa = PBXGroup;
 			children = (
+				218F519B2026D00E006EEDC2 /* MobileSafariEnhancer.entitlements */,
 				21B9AAD72025ADE7006002DD /* AppDelegate.swift */,
 				21B9AAD92025ADE7006002DD /* DocumentBrowserViewController.swift */,
 				21B9AADB2025ADE7006002DD /* DocumentViewController.swift */,
@@ -306,10 +350,29 @@
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					21B9AAD32025ADE6006002DD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -337,7 +400,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218F51912026B449006EEDC2 /* owl-login-arm-left.png in Resources */,
+				218F51932026B457006EEDC2 /* owl-login-arm-right.png in Resources */,
 				218F51782025F9AB006EEDC2 /* tool.js in Resources */,
+				218F51A22026F7CD006EEDC2 /* owl-hand.png in Resources */,
+				218F518F2026B43A006EEDC2 /* owl-login.png in Resources */,
 				218F518420262683006EEDC2 /* jquery.js in Resources */,
 				218F51732025F54F006EEDC2 /* favicons.png in Resources */,
 			);
@@ -364,35 +431,39 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F8589B20274A36008D84B8 /* SettingTableViewController.swift in Sources */,
 				218F51542025D55C006EEDC2 /* RootViewController.swift in Sources */,
 				218F516E2025F484006EEDC2 /* HeaderViewModel.swift in Sources */,
 				218F517A2025FDDC006EEDC2 /* Network.swift in Sources */,
@@ -481,10 +553,13 @@
 				218F517E20261D07006EEDC2 /* Preview.swift in Sources */,
 				218F515F2025DDAD006EEDC2 /* BaseNavigationController.swift in Sources */,
 				218F518A2026A1D6006EEDC2 /* GDC.swift in Sources */,
+				218F51A02026D158006EEDC2 /* ResourceParser.swift in Sources */,
+				218F519A2026B767006EEDC2 /* LoginInfoModel.swift in Sources */,
 				218F51662025E4C8006EEDC2 /* MainViewController.swift in Sources */,
 				218F51682025E995006EEDC2 /* Constants.swift in Sources */,
 				218F517C2026111B006EEDC2 /* CreateTaskView.swift in Sources */,
 				218F51752025F6BC006EEDC2 /* Store.swift in Sources */,
+				218F51952026B545006EEDC2 /* LoginView.swift in Sources */,
 				218F516C2025EBB0006EEDC2 /* ErrorEnum.swift in Sources */,
 				218F518D2026B2CE006EEDC2 /* LoginViewController.swift in Sources */,
 				218F51622025DFA1006EEDC2 /* CreateTaskViewController.swift in Sources */,
@@ -543,6 +618,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_ENTITLEMENTS = FileSharer/FileSharer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
 				INFOPLIST_FILE = FileSharer/Info.plist;
@@ -569,6 +645,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_ENTITLEMENTS = FileSharer/FileSharer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
 				INFOPLIST_FILE = FileSharer/Info.plist;
@@ -699,6 +776,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MobileSafariEnhancer/MobileSafariEnhancer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
 				HEADER_SEARCH_PATHS = "";
@@ -718,6 +796,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MobileSafariEnhancer/MobileSafariEnhancer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
 				HEADER_SEARCH_PATHS = "";

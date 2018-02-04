@@ -16,7 +16,10 @@ class RootViewController: UIViewController {
     private let contentView = UIView()
     private var headerView: HeaderView!
     private var loadingMask = LoadingView()
-
+    private lazy var loginController: LoginViewController =  {
+        let controller = LoginViewController()
+        return controller
+    }()
     override func beginRequest(with context: NSExtensionContext) {
         super.beginRequest(with: context)
         Store.createStore(context: context)
@@ -35,14 +38,17 @@ class RootViewController: UIViewController {
         contentView.layer.borderColor = UIColor.borderOpacity.cgColor
         contentView.layer.masksToBounds = true
         contentView.snp.makeConstraints { maker in
-            maker.left.equalTo(10)
-            maker.right.equalTo(-10)
-            maker.center.equalToSuperview()
+            maker.left.equalTo(horizontalPadding)
+            maker.right.equalTo(-horizontalPadding)
+            maker.centerX.equalToSuperview()
+            maker.centerY.equalToSuperview().offset(0)
             maker.height.equalTo(0)
         }
-        headerView = HeaderView {
+        headerView = HeaderView(cancelAction: {
             self.cancelAction()
-        }
+        }, settingAction: {
+
+        })
         contentView.addSubview(headerView)
         headerView.snp.makeConstraints { maker in
             maker.left.right.top.equalToSuperview()
@@ -51,7 +57,7 @@ class RootViewController: UIViewController {
         contentView.addSubview(rootViewController.view)
         rootViewController.view.snp.makeConstraints { maker in
             maker.left.right.equalTo(headerView)
-            maker.top.equalTo(headerView.snp.bottom)
+            maker.top.equalTo(headerView.snp.bottom).offset(0)
             maker.bottom.equalToSuperview()
         }
         addChildViewController(rootViewController)
@@ -65,13 +71,22 @@ class RootViewController: UIViewController {
                 maker.height.equalTo(60)
             })
             self.contentView.snp.updateConstraints { maker in
-                maker.height.equalTo(screenHeight - verticalPadding*2)
+                maker.height.equalTo(contentWidth)
             }
             self.view.layoutIfNeeded()
         }) { _ in
             self.loadingMask.display(fromView: self.contentView) { maker in
                 maker.left.right.top.bottom.equalTo(self.rootViewController.view)
             }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(floatLiteral: 1)) {
+            self.loadingMask.hide(animated: true)
+            self.contentView.addSubview(self.loginController.view)
+            self.loginController.view.snp.makeConstraints({ maker in
+                maker.left.right.top.bottom.equalTo(self.rootViewController.view)
+            })
+            self.addChildViewController(self.loginController)
         }
     }
 

@@ -10,15 +10,16 @@ import UIKit
 import SDWebImage
 
 class HeaderViewModel {
-    let favicon = UIImageView(image: UIImage(named: "favicons"))
+    let favicon = UIImageView(image: #imageLiteral(resourceName: "favicons.png"))
     let titleLable = UILabel()
-    var imageURL: URL? {
-        didSet {
-            if let url = imageURL {
-                favicon.sd_setImage(with: url, completed: nil)
-            }
+
+    func setValue(imageURL: URL, address: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.favicon.sd_setImage(with: imageURL, completed: nil)
+            self?.titleLable.text = address
         }
     }
+
     init() {
         titleLable.text = "未知"
         titleLable.textColor = .lightText
