@@ -24,6 +24,11 @@
 		218F51782025F9AB006EEDC2 /* tool.js in Resources */ = {isa = PBXBuildFile; fileRef = 218F51772025F9AB006EEDC2 /* tool.js */; };
 		218F517A2025FDDC006EEDC2 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51792025FDDC006EEDC2 /* Network.swift */; };
 		218F517C2026111B006EEDC2 /* CreateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F517B2026111B006EEDC2 /* CreateTaskView.swift */; };
+		218F517E20261D07006EEDC2 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F517D20261D07006EEDC2 /* Preview.swift */; };
+		218F518420262683006EEDC2 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 218F518320262683006EEDC2 /* jquery.js */; };
+		218F518820269B3E006EEDC2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F518720269B3E006EEDC2 /* LoadingView.swift */; };
+		218F518A2026A1D6006EEDC2 /* GDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51892026A1D6006EEDC2 /* GDC.swift */; };
+		218F518D2026B2CE006EEDC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F518C2026B2CE006EEDC2 /* LoginViewController.swift */; };
 		21B9AAD82025ADE7006002DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9AAD72025ADE7006002DD /* AppDelegate.swift */; };
 		21B9AADA2025ADE7006002DD /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9AAD92025ADE7006002DD /* DocumentBrowserViewController.swift */; };
 		21B9AADC2025ADE7006002DD /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9AADB2025ADE7006002DD /* DocumentViewController.swift */; };
@@ -79,6 +84,11 @@
 		218F51772025F9AB006EEDC2 /* tool.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = tool.js; sourceTree = "<group>"; };
 		218F51792025FDDC006EEDC2 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		218F517B2026111B006EEDC2 /* CreateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskView.swift; sourceTree = "<group>"; };
+		218F517D20261D07006EEDC2 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		218F518320262683006EEDC2 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		218F518720269B3E006EEDC2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		218F51892026A1D6006EEDC2 /* GDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDC.swift; sourceTree = "<group>"; };
+		218F518C2026B2CE006EEDC2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		21B9AAD42025ADE6006002DD /* MobileSafariEnhancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSafariEnhancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B9AAD72025ADE7006002DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B9AAD92025ADE7006002DD /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 			children = (
 				218F515E2025DDAD006EEDC2 /* BaseNavigationController.swift */,
 				218F51612025DFA1006EEDC2 /* CreateTaskViewController.swift */,
+				218F518C2026B2CE006EEDC2 /* LoginViewController.swift */,
 				218F51632025DFBC006EEDC2 /* TaskListTableViewController.swift */,
 				218F51652025E4C8006EEDC2 /* MainViewController.swift */,
 			);
@@ -145,6 +156,8 @@
 			children = (
 				218F51692025EAC2006EEDC2 /* HeaderView.swift */,
 				218F517B2026111B006EEDC2 /* CreateTaskView.swift */,
+				218F517D20261D07006EEDC2 /* Preview.swift */,
+				218F518720269B3E006EEDC2 /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				218F515C2025DB90006EEDC2 /* UIColorExtensions.swift */,
+				218F51892026A1D6006EEDC2 /* GDC.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 		218F51712025F541006EEDC2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				218F518320262683006EEDC2 /* jquery.js */,
 				218F51722025F54F006EEDC2 /* favicons.png */,
 				218F51772025F9AB006EEDC2 /* tool.js */,
 			);
@@ -323,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				218F51782025F9AB006EEDC2 /* tool.js in Resources */,
+				218F518420262683006EEDC2 /* jquery.js in Resources */,
 				218F51732025F54F006EEDC2 /* favicons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +370,12 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -366,7 +387,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,12 +477,16 @@
 				218F516E2025F484006EEDC2 /* HeaderViewModel.swift in Sources */,
 				218F517A2025FDDC006EEDC2 /* Network.swift in Sources */,
 				218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */,
+				218F518820269B3E006EEDC2 /* LoadingView.swift in Sources */,
+				218F517E20261D07006EEDC2 /* Preview.swift in Sources */,
 				218F515F2025DDAD006EEDC2 /* BaseNavigationController.swift in Sources */,
+				218F518A2026A1D6006EEDC2 /* GDC.swift in Sources */,
 				218F51662025E4C8006EEDC2 /* MainViewController.swift in Sources */,
 				218F51682025E995006EEDC2 /* Constants.swift in Sources */,
 				218F517C2026111B006EEDC2 /* CreateTaskView.swift in Sources */,
 				218F51752025F6BC006EEDC2 /* Store.swift in Sources */,
 				218F516C2025EBB0006EEDC2 /* ErrorEnum.swift in Sources */,
+				218F518D2026B2CE006EEDC2 /* LoginViewController.swift in Sources */,
 				218F51622025DFA1006EEDC2 /* CreateTaskViewController.swift in Sources */,
 				218F51642025DFBC006EEDC2 /* TaskListTableViewController.swift in Sources */,
 				218F516A2025EAC2006EEDC2 /* HeaderView.swift in Sources */,

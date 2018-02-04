@@ -17,6 +17,10 @@ target 'FileSharer' do
   # Pods for FileSharer
   shared_pods
   pod 'Tabman', '~> 1.0'
+  pod 'FontAwesome.swift'
+  pod 'RealmSwift'
+  pod 'DGActivityIndicatorView'
+  pod 'MBProgressHUD', '~> 1.1.0'
 end
 
 target 'MobileSafariEnhancer' do

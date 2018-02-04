@@ -15,6 +15,7 @@ class RootViewController: UIViewController {
     private let rootViewController = MainViewController()
     private let contentView = UIView()
     private var headerView: HeaderView!
+    private var loadingMask = LoadingView()
 
     override func beginRequest(with context: NSExtensionContext) {
         super.beginRequest(with: context)
@@ -39,7 +40,6 @@ class RootViewController: UIViewController {
             maker.center.equalToSuperview()
             maker.height.equalTo(0)
         }
-
         headerView = HeaderView {
             self.cancelAction()
         }
@@ -60,14 +60,18 @@ class RootViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.setNeedsLayout()
-        UIView.animate(withDuration: animDuration) {
+        UIView.animate(withDuration: animDuration, animations: {
             self.headerView.snp.updateConstraints({ maker in
                 maker.height.equalTo(60)
             })
             self.contentView.snp.updateConstraints { maker in
-                maker.height.equalTo(screenHeight - 50*2)
+                maker.height.equalTo(screenHeight - verticalPadding*2)
             }
             self.view.layoutIfNeeded()
+        }) { _ in
+            self.loadingMask.display(fromView: self.contentView) { maker in
+                maker.left.right.top.bottom.equalTo(self.rootViewController.view)
+            }
         }
     }
 

@@ -10,3 +10,4 @@ import UIKit
 
 let screenHeight = UIScreen.main.bounds.height
 let animDuration = 0.25
+let verticalPadding: CGFloat = 50
