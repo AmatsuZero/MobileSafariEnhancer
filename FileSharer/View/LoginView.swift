@@ -16,9 +16,11 @@ class LoginView: UIView {
     private let imgRightHand = UIImageView(image: #imageLiteral(resourceName: "owl-login-arm-right.png"))
     private let imgRightHandGone = UIImageView(image: #imageLiteral(resourceName: "owl-hand.png"))
     private let vLogin = UIView()
-    private let button = UIButton(type: .custom)
+    private let saveButton = UIButton(type: .custom)
+    private let skipButton = UIButton(type: .custom)
     fileprivate let offsetLeftHand = factorWidth(60)
     var saveHandler: (() -> Void)?
+    var skipHandler: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -79,20 +81,34 @@ class LoginView: UIView {
                                                                      width: vLogin.frame.width - factorWidth(60),
                                                                      height: factorHeight(44))
 
-        button.setTitle("保存", for: .normal)
-        button.layer.cornerRadius = 7
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.backgroundColor = .gray
-        button.frame = CGRect(x: 0,
-                              y: vLogin.frame.maxY + 14,
-                              width: vLogin.frame.width,
+        saveButton.setTitle("保存", for: .normal)
+        saveButton.layer.cornerRadius = 7
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        saveButton.backgroundColor = .gray
+        let btnPadding = vLogin.frame.minX
+        let btnWidth = (contentWidth - 3*btnPadding)/2
+        saveButton.frame = CGRect(x: btnPadding,
+                              y: vLogin.frame.maxY + btnPadding,
+                              width: btnWidth,
                               height: factorHeight(44))
-        button.center.x = vLogin.center.x
-        addSubview(button)
-        button.addTarget(self,
-                         action: #selector(LoginView.save(sender:)),
-                         for: .touchUpInside)
+        saveButton.addTarget(self,
+                             action: #selector(LoginView.save(sender:)),
+                             for: .touchUpInside)
+        addSubview(saveButton)
+
+        skipButton.setTitle("跳过", for: .normal)
+        skipButton.layer.cornerRadius = saveButton.layer.cornerRadius
+        skipButton.setTitleColor(.white, for: .normal)
+        skipButton.titleLabel?.font = saveButton.titleLabel?.font
+        skipButton.backgroundColor = .yellowTheme
+        skipButton.frame = CGRect(x: saveButton.frame.maxX + btnPadding,
+                                  y: saveButton.frame.minY,
+                                  width: btnWidth,
+                                  height: saveButton.frame.height)
+        skipButton.addTarget(self, action: #selector(LoginView.skip), for: .touchUpInside)
+        addSubview(skipButton)
+
         vLogin.addSubview(Store.shared.loginInfoModel.passwordTextField)
     }
 
@@ -103,13 +119,22 @@ class LoginView: UIView {
     @objc func save(sender: UIButton?) {
         endEditing(true)
         Store.shared.loginInfoModel.saveToKeychain()
-        if let hander = saveHandler {
-            hander()
-        }
+        saveHandler?()
+    }
+
+    @objc func skip(sender: UIButton?) {
+        endEditing(true)
+        skipHandler?()
     }
 }
 
 extension LoginView: UITextFieldDelegate {
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        saveButton.backgroundColor = Store.shared.loginInfoModel.isSaveable ? .yellowTheme : .gray
+        saveButton.isEnabled = Store.shared.loginInfoModel.isSaveable
+        return true
+    }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.yellowTheme.cgColor
@@ -163,8 +188,8 @@ extension LoginView: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        button.backgroundColor = Store.shared.loginInfoModel.isSaveable ? .yellowTheme : .gray
-        button.isEnabled = Store.shared.loginInfoModel.isSaveable
+        saveButton.backgroundColor = Store.shared.loginInfoModel.isSaveable ? .yellowTheme : .gray
+        saveButton.isEnabled = Store.shared.loginInfoModel.isSaveable
         return true
     }
 

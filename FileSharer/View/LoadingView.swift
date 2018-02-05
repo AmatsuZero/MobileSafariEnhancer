@@ -31,7 +31,8 @@ class LoadingView: UIView {
 
     func display(fromView: UIView,
                  animated: Bool = true,
-                 customConstraint: ((ConstraintMaker) -> Void)? = nil)  {
+                 customConstraint: ((ConstraintMaker) -> Void)? = nil,
+                 completionHandler: (() -> Void)? = nil)  {
         fromView.addSubview(self)
         if let constraint = customConstraint {
             snp.makeConstraints(constraint)
@@ -41,8 +42,10 @@ class LoadingView: UIView {
             }
         }
         if animated {
-            UIView.animate(withDuration: animDuration) {
+            UIView.animate(withDuration: animDuration, animations: {
                 self.alpha = 1
+            }) { _ in
+                completionHandler?()
             }
         } else {
             alpha = 1
@@ -50,14 +53,17 @@ class LoadingView: UIView {
         activityIndicatorView?.startAnimating()
     }
 
-    func hide(animated: Bool)  {
+    func hide(animated: Bool, completionHandler: (() -> Void)? = nil)  {
         activityIndicatorView?.stopAnimating()
         if animated {
-            UIView.animate(withDuration: animDuration) {
-                self.alpha = 0
+            UIView.animate(withDuration: animDuration, animations: {
+                 self.alpha = 0
+            }) { _ in
+                completionHandler?()
             }
         } else {
             alpha = 0
+            completionHandler?()
         }
         removeFromSuperview()
     }

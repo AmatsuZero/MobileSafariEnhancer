@@ -10,13 +10,13 @@ import UIKit
 
 class CreateTaskViewController: UIViewController {
 
+    let createTaskView = CreateTaskView(frame: .zero)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        view.addSubview(createTaskView)
+        createTaskView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
     }
 }

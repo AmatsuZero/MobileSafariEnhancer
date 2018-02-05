@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
         loginView.saveHandler = { 
             self.hide()
         }
+        loginView.skipHandler = {
+            self.hide()
+        }
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(LoginViewController.keyboardWillShow(notification:)),
                                                name: .UIKeyboardWillShow,

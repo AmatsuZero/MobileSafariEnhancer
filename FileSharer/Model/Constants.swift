@@ -23,3 +23,4 @@ let factorWidth: (CGFloat) -> CGFloat = { width -> CGFloat in
 let factorHeight: (CGFloat) -> CGFloat = { height -> CGFloat in
     return (height*contentHeifht)/(667-horizontalPadding*2)
 }
+let grounpIdentifier = "group.daubert.safarienhancer"

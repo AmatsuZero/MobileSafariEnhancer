@@ -9,12 +9,12 @@
 import UIKit
 import KeychainAccess
 import FontAwesome_swift
+import PromiseKit
 
 class LoginInfoModel {
 
     let userTextField = UITextField()
     let passwordTextField = UITextField()
-    private var keychain: Keychain?
     var showType = ShowType.NONE
 
     enum ShowType: Int {
@@ -67,31 +67,46 @@ class LoginInfoModel {
         return leftView
     }
 
-    func initializeKeychain(server: String, protocal: String) {
-        if keychain == nil {
-            keychain = Keychain.init(server: server,
-                                     protocolType: ProtocolType(rawValue: protocal) ?? .https)
-        }
-        if let lastLoggedUser = UserDefaults.standard.array(forKey: server)?.first as? String,
-            let pwd = try? keychain?.getString(lastLoggedUser) {
-            DispatchQueue.main.async {
-                self.userTextField.text = lastLoggedUser
-                self.passwordTextField.text = pwd
+    func initializeFillText(server: String, protocal: String) {
+        getLastLoginInfo(server: server, protocol: protocal).then { info -> Void in
+            if let user = info?.user, let pwd = info?.password {
+                DispatchQueue.main.async {
+                    self.userTextField.text = user
+                    self.passwordTextField.text = pwd
+                }
+            } else {
+                self.userTextField.placeholder = "输入\(server)注册邮箱"
+                self.passwordTextField.placeholder = "输入\(server)密码"
             }
         }
-        userTextField.placeholder = "输入\(server)注册邮箱"
-        passwordTextField.placeholder = "输入\(server)密码"
     }
 
     func saveToKeychain() {
-        if let user = userTextField.text, let pwd = passwordTextField.text {
-          //  try? keychain?.set(pwd, key: user)
-        }
+//        if let user = userTextField.text, let pwd = passwordTextField.text {
+//            try? keychain?.set(pwd, key: user)
+//        }
     }
 
     var isSaveable: Bool {
         get {
             return userTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
+        }
+    }
+
+    func getLastLoginInfo(server: String, protocol scheme: String) -> Promise<(user: String, password: String)?> {
+        return Promise { resolve, reject in
+            if let lastLoggedUser = UserDefaults.standard.array(forKey: server)?.first as? String {
+                let chain = Keychain(server: server,
+                                     protocolType: ProtocolType(rawValue: scheme) ?? .https)
+                do {
+                    let pwd = try chain.getString(lastLoggedUser) ?? ""
+                    resolve((user: lastLoggedUser, password: pwd))
+                } catch(let e) {
+                    reject(e)
+                }
+            } else {
+                resolve(nil)
+            }
         }
     }
 }

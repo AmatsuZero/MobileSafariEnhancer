@@ -75,21 +75,23 @@ class RootViewController: UIViewController {
             }
             self.view.layoutIfNeeded()
         }) { _ in
-            self.loadingMask.display(fromView: self.contentView) { maker in
-                maker.left.right.top.bottom.equalTo(self.rootViewController.view)
-            }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime(floatLiteral: 1)) {
-            self.loadingMask.hide(animated: true)
-            self.contentView.addSubview(self.loginController.view)
-            self.loginController.view.snp.makeConstraints({ maker in
+            self.loadingMask.display(fromView: self.contentView, animated: true, customConstraint: { maker in
                 maker.left.right.top.bottom.equalTo(self.rootViewController.view)
             })
-            self.addChildViewController(self.loginController)
+            // 检查是否需要登录
+            Store.shared.needLogin().then(on: .main) { isNecessary -> Void in
+                if isNecessary {
+                    self.loadingMask.hide(animated: true) {
+                        self.contentView.addSubview(self.loginController.view)
+                        self.loginController.view.snp.makeConstraints({ maker in
+                            maker.left.right.top.bottom.equalTo(self.rootViewController.view)
+                        })
+                        self.addChildViewController(self.loginController)
+                    }
+                }
+            }
         }
     }
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         cancelAction()
     }

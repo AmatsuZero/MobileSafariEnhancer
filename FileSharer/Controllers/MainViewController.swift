@@ -39,6 +39,7 @@ class MainViewController: TabmanViewController {
             Item(title: "新任务"),
             Item(title: "任务列表")
         ]
+        view.backgroundColor = .white
     }
 }
 
