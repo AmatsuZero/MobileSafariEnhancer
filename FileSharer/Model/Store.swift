@@ -23,7 +23,6 @@ class Store {
                                      address: host)
                 loginInfoModel.initializeFillText(server: host,
                                                   protocal: components.scheme!)
-                previewController.loadRequest(url: url)
                 ResourceParser.getEd2kResources(url: url).then { ed2ks in
                     print(ed2ks)
                 }
@@ -34,8 +33,6 @@ class Store {
     // View-Models
     let headerModel = HeaderViewModel()
     let loginInfoModel = LoginInfoModel()
-    // Preview controller
-    let previewController = PreviewViewController()
 
     private init(context ctx: NSExtensionContext) {
         context = ctx

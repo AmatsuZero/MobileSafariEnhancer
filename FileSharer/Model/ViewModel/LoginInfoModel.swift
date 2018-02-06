@@ -95,17 +95,19 @@ class LoginInfoModel {
 
     func getLastLoginInfo(server: String, protocol scheme: String) -> Promise<(user: String, password: String)?> {
         return Promise { resolve, reject in
-            if let lastLoggedUser = UserDefaults.standard.array(forKey: server)?.first as? String {
-                let chain = Keychain(server: server,
-                                     protocolType: ProtocolType(rawValue: scheme) ?? .https)
-                do {
-                    let pwd = try chain.getString(lastLoggedUser) ?? ""
-                    resolve((user: lastLoggedUser, password: pwd))
-                } catch(let e) {
-                    reject(e)
+            DispatchQueue.global().async {
+                if let lastLoggedUser = UserDefaults.standard.array(forKey: server)?.first as? String {
+                    let chain = Keychain(server: server,
+                                         protocolType: ProtocolType(rawValue: scheme) ?? .https)
+                    do {
+                        let pwd = try chain.getString(lastLoggedUser) ?? ""
+                        resolve((user: lastLoggedUser, password: pwd))
+                    } catch(let e) {
+                        reject(e)
+                    }
+                } else {
+                    resolve(nil)
                 }
-            } else {
-                resolve(nil)
             }
         }
     }

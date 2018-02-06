@@ -9,14 +9,18 @@
 import Foundation
 import PromiseKit
 
-struct ED2K {
+struct ResourceLink {
+    enum LinkType: Int {
+        case unknown = 0, ed2k, magnet, http, bt
+    }
     var link = ""
     var name = ""
+    var type = LinkType.unknown
 }
 
 class ResourceParser {
 
-    class func getEd2kResources(url: URL) -> Promise<[ED2K]> {
+    class func getEd2kResources(url: URL) -> Promise<[ResourceLink]> {
         var document:HTMLDocument?
         return firstly {
             Network.shared.sessionManager.request(url).responseData()
@@ -25,8 +29,8 @@ class ResourceParser {
                 document = try HTMLDocument(data: data)
                 resolve(document?.rootNode?.nodes(forXPath: "//a[@href]"))
             }
-        }.then(on: DispatchQueue.global()) { nodes -> [ED2K] in
-            var results = [ED2K]()
+        }.then(on: DispatchQueue.global()) { nodes -> [ResourceLink] in
+            var results = [ResourceLink]()
             nodes?.filter({$0.htmlString?.length ?? 0 > 200 })
                 .map({return $0.htmlString!})
                 .forEach({ raw in
@@ -39,13 +43,13 @@ class ResourceParser {
                         } else {
                             ed2k = "\(strClearArray.first!)|/"
                         }
-                        results.append(ED2K(link: ed2k, name: ed2k.searchEd2kName()))
+                        results.append(ResourceLink(link: ed2k, name: ed2k.searchEd2kName(), type: .ed2k))
                     } else if raw.components(separatedBy: "magnet:?").count >= 2 { // 查找磁力链接
                         let range = raw.range(of: "magnet:?[^\"]+", options: .regularExpression)
                         ed2k = raw.substring(with: range)
                     }
                     if !ed2k.isEmpty {
-                        results.append(ED2K(link: ed2k, name: ed2k.searchEd2kName()))
+                        results.append(ResourceLink(link: ed2k, name: ed2k.searchEd2kName(), type: .magnet))
                     }
                 })
              return results
@@ -58,7 +62,7 @@ class ResourceParser {
         }
     }
 
-    class func sortout(resources: [HTMLNode]?) -> [ED2K] {
+    class func sortout(resources: [HTMLNode]?) -> [ResourceLink] {
         let clearEd2kStr: (String) -> String = { ed2k in
             let start = ed2k.range(of: "ed2k://", options: .regularExpression)?.lowerBound
             let end = ed2k.range(of: "|/", options: .regularExpression)?.upperBound
@@ -75,6 +79,6 @@ class ResourceParser {
                 ed2kSets.append(contentsOf: clearEd2ks)
             }
         }
-        return ed2kSets.sorted().map({return ED2K(link: $0, name: $0.searchEd2kName())})
+        return ed2kSets.sorted().map({return ResourceLink(link: $0, name: $0.searchEd2kName(), type: .ed2k)})
     }
 }

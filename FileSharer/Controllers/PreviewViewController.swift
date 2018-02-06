@@ -11,20 +11,27 @@ import WebKit
 
 class PreviewViewController: UIViewController {
 
-    private var webview: Preview?
+    private var webview: Preview
+    let url: URL
+
+    init(url: URL) {
+        self.url = url
+        webview = Preview(url: url)
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    func loadRequest(url: URL)  {
-        webview = Preview(url: url)
-        view.addSubview(webview!)
-        webview?.snp.makeConstraints({ maker in
+        view.addSubview(webview)
+        webview.snp.makeConstraints({ maker in
             maker.edges.equalToSuperview()
         })
-        webview?.navigationDelegate = self
-        webview?.load(URLRequest(url: url))
+        webview.navigationDelegate = self
+        webview.load(URLRequest(url: url))
     }
 }
 

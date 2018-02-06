@@ -77,7 +77,9 @@ class RootViewController: UIViewController {
         }) { _ in
             self.loadingMask.display(fromView: self.contentView, animated: true, customConstraint: { maker in
                 maker.left.right.top.bottom.equalTo(self.rootViewController.view)
-            })
+            }) {
+               // self.loginCheck()
+            }
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

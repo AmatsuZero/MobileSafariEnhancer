@@ -21,3 +21,15 @@ enum TaskError: Error {
         }
     }
 }
+
+enum CustomErrors {
+    static let domain = "FileExplorerDomain"
+
+    static let nilItem = NSError(domain: domain,
+                                 code: 1,
+                                 userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Passed URL is incorrect or item at specified URL doesn't exist", comment: "")])
+    static let incorrectDirectoryURL = NSError(domain: domain,
+                                               code: 1,
+                                               userInfo: [
+                                                NSLocalizedDescriptionKey: NSLocalizedString("Passed URL is incorrect or item at specified URL isn't a directory", comment: "")])
+}
