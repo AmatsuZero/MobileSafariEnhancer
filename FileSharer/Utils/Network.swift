@@ -47,4 +47,18 @@ enum Router: URLConvertible, URLRequestConvertible {
 
 class Network {
     let sessionManager = SessionManager(configuration: .default)
+    static let shared = Network()
+
+    func valid(url: URL) -> Promise<HTTPURLResponse?> {
+        return Promise { resolve, reject in
+            let request = try URLRequest(url: url, method: .head)
+            sessionManager.request(request).response { response in
+                if let error = response.error {
+                    reject(error)
+                } else {
+                    resolve(response.response)
+                }
+            }
+        }
+    }
 }

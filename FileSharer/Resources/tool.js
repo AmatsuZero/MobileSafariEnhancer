@@ -3,7 +3,7 @@ var MyExtensionJavaScriptClass = function() {};
 MyExtensionJavaScriptClass.prototype = {
 
 getResource: function() {
-    return []
+    return window.location.href
 },
 
 run: function(arguments) {

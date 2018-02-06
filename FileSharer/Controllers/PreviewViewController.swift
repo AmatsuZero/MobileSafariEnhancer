@@ -44,7 +44,6 @@ extension PreviewViewController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView,
                  didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

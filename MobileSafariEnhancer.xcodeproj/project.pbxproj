@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1C75285CDC565C7BAFBA3549 /* Pods_MobileSafariEnhancer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */; };
+		213D1BB720289E5F00E34019 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D1BB620289E5F00E34019 /* libxml2.tbd */; };
+		213D1BB920289E9D00E34019 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D1BB820289E9D00E34019 /* libxml2.2.tbd */; };
+		213D1BC62028A45300E34019 /* HTMLNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1BC12028A45300E34019 /* HTMLNode+XPath.m */; };
+		213D1BC72028A45300E34019 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1BC22028A45300E34019 /* HTMLDocument.m */; };
+		213D1BC82028A45300E34019 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1BC32028A45300E34019 /* HTMLNode.m */; };
+		213D1BCD2028B74900E34019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D1BCC2028B74900E34019 /* StringExtensions.swift */; };
 		218F514D2025AF1B006EEDC2 /* FileSharer.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 218F51432025AF1B006EEDC2 /* FileSharer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		218F51542025D55C006EEDC2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51532025D55C006EEDC2 /* RootViewController.swift */; };
 		218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F515C2025DB90006EEDC2 /* UIColorExtensions.swift */; };
@@ -107,6 +113,15 @@
 /* Begin PBXFileReference section */
 		0A573BEB8A7B941728883E75 /* Pods-FileSharer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileSharer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer.debug.xcconfig"; sourceTree = "<group>"; };
 		18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileSafariEnhancer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		213D1BB620289E5F00E34019 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		213D1BB820289E9D00E34019 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		213D1BC02028A45300E34019 /* HTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDocument.h; sourceTree = "<group>"; };
+		213D1BC12028A45300E34019 /* HTMLNode+XPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTMLNode+XPath.m"; sourceTree = "<group>"; };
+		213D1BC22028A45300E34019 /* HTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLDocument.m; sourceTree = "<group>"; };
+		213D1BC32028A45300E34019 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		213D1BC42028A45300E34019 /* HTMLNode+XPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTMLNode+XPath.h"; sourceTree = "<group>"; };
+		213D1BC52028A45300E34019 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		213D1BCC2028B74900E34019 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		218F51432025AF1B006EEDC2 /* FileSharer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FileSharer.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		218F514A2025AF1B006EEDC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218F51522025D55B006EEDC2 /* FileSharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FileSharer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -167,6 +182,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D1BB920289E9D00E34019 /* libxml2.2.tbd in Frameworks */,
+				213D1BB720289E5F00E34019 /* libxml2.tbd in Frameworks */,
 				2F9DD69FF80F1D24446E8D0D /* Pods_FileSharer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +215,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2165593B2028992C00195F0A /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				213D1BC02028A45300E34019 /* HTMLDocument.h */,
+				213D1BC22028A45300E34019 /* HTMLDocument.m */,
+				213D1BC52028A45300E34019 /* HTMLNode.h */,
+				213D1BC32028A45300E34019 /* HTMLNode.m */,
+				213D1BC42028A45300E34019 /* HTMLNode+XPath.h */,
+				213D1BC12028A45300E34019 /* HTMLNode+XPath.m */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
 		218F51442025AF1B006EEDC2 /* FileSharer */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +278,6 @@
 				218F51672025E995006EEDC2 /* Constants.swift */,
 				218F516B2025EBB0006EEDC2 /* ErrorEnum.swift */,
 				218F51742025F6BC006EEDC2 /* Store.swift */,
-				218F51792025FDDC006EEDC2 /* Network.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +287,7 @@
 			children = (
 				218F515C2025DB90006EEDC2 /* UIColorExtensions.swift */,
 				218F51892026A1D6006EEDC2 /* GDC.swift */,
+				213D1BCC2028B74900E34019 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,7 +318,9 @@
 		218F519E2026D12B006EEDC2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2165593B2028992C00195F0A /* HTMLParser */,
 				218F519F2026D158006EEDC2 /* ResourceParser.swift */,
+				218F51792025FDDC006EEDC2 /* Network.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -354,6 +386,8 @@
 		74D8691156C3C187AE8F2509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				213D1BB820289E9D00E34019 /* libxml2.2.tbd */,
+				213D1BB620289E5F00E34019 /* libxml2.tbd */,
 				4107EB96219ADA2326E75B73 /* Pods_FileSharer.framework */,
 				18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */,
 			);
@@ -710,22 +744,26 @@
 				218F516E2025F484006EEDC2 /* HeaderViewModel.swift in Sources */,
 				218F517A2025FDDC006EEDC2 /* Network.swift in Sources */,
 				218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */,
+				213D1BC72028A45300E34019 /* HTMLDocument.m in Sources */,
 				218F518820269B3E006EEDC2 /* LoadingView.swift in Sources */,
 				218F517E20261D07006EEDC2 /* Preview.swift in Sources */,
 				218F515F2025DDAD006EEDC2 /* BaseNavigationController.swift in Sources */,
 				218F518A2026A1D6006EEDC2 /* GDC.swift in Sources */,
+				213D1BC82028A45300E34019 /* HTMLNode.m in Sources */,
 				218F51A02026D158006EEDC2 /* ResourceParser.swift in Sources */,
 				218F519A2026B767006EEDC2 /* LoginInfoModel.swift in Sources */,
 				218F51662025E4C8006EEDC2 /* MainViewController.swift in Sources */,
 				218F51682025E995006EEDC2 /* Constants.swift in Sources */,
 				218F517C2026111B006EEDC2 /* CreateTaskView.swift in Sources */,
 				218F51752025F6BC006EEDC2 /* Store.swift in Sources */,
+				213D1BC62028A45300E34019 /* HTMLNode+XPath.m in Sources */,
 				21F8589D20275284008D84B8 /* PreviewViewController.swift in Sources */,
 				218F51952026B545006EEDC2 /* LoginView.swift in Sources */,
 				218F516C2025EBB0006EEDC2 /* ErrorEnum.swift in Sources */,
 				218F518D2026B2CE006EEDC2 /* LoginViewController.swift in Sources */,
 				218F51622025DFA1006EEDC2 /* CreateTaskViewController.swift in Sources */,
 				218F51642025DFBC006EEDC2 /* TaskListTableViewController.swift in Sources */,
+				213D1BCD2028B74900E34019 /* StringExtensions.swift in Sources */,
 				218F516A2025EAC2006EEDC2 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -807,10 +845,14 @@
 				CODE_SIGN_ENTITLEMENTS = FileSharer/FileSharer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = FileSharer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MockingBot.MobileSafariEnhancer.FileSharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -834,10 +876,14 @@
 				CODE_SIGN_ENTITLEMENTS = FileSharer/FileSharer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = FileSharer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MockingBot.MobileSafariEnhancer.FileSharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -24,6 +24,9 @@ class Store {
                 loginInfoModel.initializeFillText(server: host,
                                                   protocal: components.scheme!)
                 previewController.loadRequest(url: url)
+                ResourceParser.getEd2kResources(url: url).then { ed2ks in
+                    print(ed2ks)
+                }
             }
         }
     }
@@ -36,15 +39,17 @@ class Store {
 
     private init(context ctx: NSExtensionContext) {
         context = ctx
-        for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
-            for case let itemProvider as NSItemProvider in obj.attachments! where itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
-                itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String,
-                                      options: nil) { item, _ in
-                                        if let results = item as? NSDictionary,
-                                            let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                                            let baseURI = info["url"] as? String  {
-                                            self.urlComponents = URLComponents(string: baseURI)
-                                        }
+        DispatchQueue.global().async {
+            for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
+                for case let itemProvider as NSItemProvider in obj.attachments! where itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
+                    itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String,
+                                          options: nil) { item, _ in
+                                            if let results = item as? NSDictionary,
+                                                let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+                                                let baseURI = info["url"] as? String  {
+                                                self.urlComponents = URLComponents(string: baseURI)
+                                            }
+                    }
                 }
             }
         }
@@ -54,20 +59,34 @@ class Store {
         Store.shared = Store(context: context)
     }
 
+    //TODO: 这里目前只有判断钥匙串里面是否已经有保存的信息，对于一些暂不需要登录信息就能下载的地址，也可以直接忽略
+    //如果后缀是资源类型，直接通过head请求，判断能否下载，返回403错误，再尝试鉴权
     func needLogin() -> Promise<Bool> {
         guard let url = urlComponents?.url else {
             return Promise(value: false)
         }
-        return Promise { resolve, _ in
-            if let host = url.host, let scheme = url.scheme {
-                self.loginInfoModel.getLastLoginInfo(server: host, protocol: scheme).then { info -> Void in
-                    resolve(info == nil)
-                }.catch { error in
-                    resolve(false)
+        return Network.shared.valid(url: url).then { response in
+            let downloadadbleTypes = ["text/plain",
+                                      "image/gif", "image/png", "image/jpeg", "image/bmp", "image/webp",
+                                      "video/webm", "video/ogg", "video/3gp", "video/mp4"]
+            if response?.statusCode == 403 {
+                return Promise(value: true)
+            } else if downloadadbleTypes.contains(response?.mimeType ?? "") {
+                return Promise(value: false)
+            } else {// 检查尺寸
+                return Promise { resolve, _ in
+                    if let host = url.host, let scheme = url.scheme {
+                        self.loginInfoModel.getLastLoginInfo(server: host, protocol: scheme).then { info -> Void in
+                            resolve(info == nil)
+                            }.catch { error in
+                                resolve(false)
+                        }
+                    } else {
+                        resolve(true)
+                    }
                 }
-            } else {
-                resolve(true)
             }
+
         }
     }
 }
