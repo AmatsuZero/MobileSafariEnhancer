@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C75285CDC565C7BAFBA3549 /* Pods_MobileSafariEnhancer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */; };
 		211EE6B5202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211EE6B4202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift */; };
+		21266FC0F6199CF4A0B42DDA /* Pods_MobileSafariEnhancer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D48BBA50AD100412E0370C /* Pods_MobileSafariEnhancer.framework */; };
+		2129EF57202B454200C4CE86 /* ExtensionTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2129EF56202B454200C4CE86 /* ExtensionTransitionDelegate.swift */; };
 		213D1BB720289E5F00E34019 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D1BB620289E5F00E34019 /* libxml2.tbd */; };
 		213D1BB920289E9D00E34019 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D1BB820289E9D00E34019 /* libxml2.2.tbd */; };
 		213D1BC62028A45300E34019 /* HTMLNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1BC12028A45300E34019 /* HTMLNode+XPath.m */; };
@@ -100,7 +101,7 @@
 		21F858B92027F985008D84B8 /* SimpleHTTPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F858B72027F985008D84B8 /* SimpleHTTPKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21F858BC2027F985008D84B8 /* SimpleHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F858B52027F985008D84B8 /* SimpleHTTPKit.framework */; };
 		21F858BD2027F985008D84B8 /* SimpleHTTPKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F858B52027F985008D84B8 /* SimpleHTTPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2F9DD69FF80F1D24446E8D0D /* Pods_FileSharer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4107EB96219ADA2326E75B73 /* Pods_FileSharer.framework */; };
+		9196AB74311F4A507ECA0379 /* Pods_FileSharer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D959A473B6B7DB7343CF4B8A /* Pods_FileSharer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,9 +155,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A573BEB8A7B941728883E75 /* Pods-FileSharer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileSharer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer.debug.xcconfig"; sourceTree = "<group>"; };
-		18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileSafariEnhancer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D48BBA50AD100412E0370C /* Pods_MobileSafariEnhancer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileSafariEnhancer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		211EE6B4202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryItemPresentationCoordinator.swift; sourceTree = "<group>"; };
+		2129EF56202B454200C4CE86 /* ExtensionTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTransitionDelegate.swift; sourceTree = "<group>"; };
 		213D1BB620289E5F00E34019 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		213D1BB820289E9D00E34019 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		213D1BC02028A45300E34019 /* HTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDocument.h; sourceTree = "<group>"; };
@@ -257,10 +258,11 @@
 		21F858B52027F985008D84B8 /* SimpleHTTPKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleHTTPKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F858B72027F985008D84B8 /* SimpleHTTPKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHTTPKit.h; sourceTree = "<group>"; };
 		21F858B82027F985008D84B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2987BAD7E4075A33AD4CD378 /* Pods-MobileSafariEnhancer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSafariEnhancer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer.debug.xcconfig"; sourceTree = "<group>"; };
-		4107EB96219ADA2326E75B73 /* Pods_FileSharer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FileSharer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51AE3F0F1C0D37D0B6234C30 /* Pods-MobileSafariEnhancer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSafariEnhancer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer.release.xcconfig"; sourceTree = "<group>"; };
-		9FB8BC59391D004C6D5DD13E /* Pods-FileSharer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileSharer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer.release.xcconfig"; sourceTree = "<group>"; };
+		8F7411B6138F8DCE179010C8 /* Pods-FileSharer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileSharer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer.release.xcconfig"; sourceTree = "<group>"; };
+		9A0ECEEF2C7B811A4313B5F2 /* Pods-MobileSafariEnhancer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSafariEnhancer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer.debug.xcconfig"; sourceTree = "<group>"; };
+		A90AE0FFAC33926A4315456E /* Pods-MobileSafariEnhancer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSafariEnhancer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer.release.xcconfig"; sourceTree = "<group>"; };
+		D8528233B657883331DB85C1 /* Pods-FileSharer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileSharer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer.debug.xcconfig"; sourceTree = "<group>"; };
+		D959A473B6B7DB7343CF4B8A /* Pods_FileSharer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FileSharer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +272,7 @@
 			files = (
 				213D1BB920289E9D00E34019 /* libxml2.2.tbd in Frameworks */,
 				213D1BB720289E5F00E34019 /* libxml2.tbd in Frameworks */,
-				2F9DD69FF80F1D24446E8D0D /* Pods_FileSharer.framework in Frameworks */,
+				9196AB74311F4A507ECA0379 /* Pods_FileSharer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,9 +280,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C75285CDC565C7BAFBA3549 /* Pods_MobileSafariEnhancer.framework in Frameworks */,
 				21F858BC2027F985008D84B8 /* SimpleHTTPKit.framework in Frameworks */,
 				21F858AA2027F96E008D84B8 /* DJDownloadKit.framework in Frameworks */,
+				21266FC0F6199CF4A0B42DDA /* Pods_MobileSafariEnhancer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +418,7 @@
 				218F517D20261D07006EEDC2 /* Preview.swift */,
 				218F518720269B3E006EEDC2 /* LoadingView.swift */,
 				218F51942026B545006EEDC2 /* LoginView.swift */,
+				2129EF56202B454200C4CE86 /* ExtensionTransitionDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,8 +504,8 @@
 				21F858A42027F96E008D84B8 /* DJDownloadKit */,
 				21F858B62027F985008D84B8 /* SimpleHTTPKit */,
 				21B9AAD52025ADE6006002DD /* Products */,
-				B2D629640A50EE2A191DFA70 /* Pods */,
 				74D8691156C3C187AE8F2509 /* Frameworks */,
+				41BCB4DB98912173963F62A2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -552,26 +555,26 @@
 			path = SimpleHTTPKit;
 			sourceTree = "<group>";
 		};
+		41BCB4DB98912173963F62A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8528233B657883331DB85C1 /* Pods-FileSharer.debug.xcconfig */,
+				8F7411B6138F8DCE179010C8 /* Pods-FileSharer.release.xcconfig */,
+				9A0ECEEF2C7B811A4313B5F2 /* Pods-MobileSafariEnhancer.debug.xcconfig */,
+				A90AE0FFAC33926A4315456E /* Pods-MobileSafariEnhancer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		74D8691156C3C187AE8F2509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				213D1BB820289E9D00E34019 /* libxml2.2.tbd */,
 				213D1BB620289E5F00E34019 /* libxml2.tbd */,
-				4107EB96219ADA2326E75B73 /* Pods_FileSharer.framework */,
-				18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */,
+				D959A473B6B7DB7343CF4B8A /* Pods_FileSharer.framework */,
+				18D48BBA50AD100412E0370C /* Pods_MobileSafariEnhancer.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B2D629640A50EE2A191DFA70 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0A573BEB8A7B941728883E75 /* Pods-FileSharer.debug.xcconfig */,
-				9FB8BC59391D004C6D5DD13E /* Pods-FileSharer.release.xcconfig */,
-				2987BAD7E4075A33AD4CD378 /* Pods-MobileSafariEnhancer.debug.xcconfig */,
-				51AE3F0F1C0D37D0B6234C30 /* Pods-MobileSafariEnhancer.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,11 +605,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 218F51502025AF1B006EEDC2 /* Build configuration list for PBXNativeTarget "FileSharer" */;
 			buildPhases = (
-				DF92B05E693D857132CFE5E3 /* [CP] Check Pods Manifest.lock */,
+				19FB6302655D0E014125DC63 /* [CP] Check Pods Manifest.lock */,
 				218F513F2025AF1B006EEDC2 /* Sources */,
 				218F51402025AF1B006EEDC2 /* Frameworks */,
 				218F51412025AF1B006EEDC2 /* Resources */,
-				AD6F55EC35BC2848A84D1F14 /* [CP] Copy Pods Resources */,
+				A142A5C4A5701EC2F5A381E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -621,14 +624,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21B9AAEA2025ADE7006002DD /* Build configuration list for PBXNativeTarget "MobileSafariEnhancer" */;
 			buildPhases = (
-				C02C1C8A9E7D4D794CABDB47 /* [CP] Check Pods Manifest.lock */,
+				026AFAD5F203F7F4FC056110 /* [CP] Check Pods Manifest.lock */,
 				21B9AAD02025ADE6006002DD /* Sources */,
 				21B9AAD12025ADE6006002DD /* Frameworks */,
 				21B9AAD22025ADE6006002DD /* Resources */,
 				218F51512025AF1B006EEDC2 /* Embed App Extensions */,
-				8451BF1F871E7D54D116DD3D /* [CP] Embed Pods Frameworks */,
-				D51D42F73E0729368580436D /* [CP] Copy Pods Resources */,
 				21F858AF2027F96E008D84B8 /* Embed Frameworks */,
+				1B669AD4490433A76DEB3F60 /* [CP] Embed Pods Frameworks */,
+				7E65DE4CF01FF34408D6C052 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -792,72 +795,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8451BF1F871E7D54D116DD3D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
-				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
-				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
-				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD6F55EC35BC2848A84D1F14 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C02C1C8A9E7D4D794CABDB47 /* [CP] Check Pods Manifest.lock */ = {
+		026AFAD5F203F7F4FC056110 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -875,22 +813,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D51D42F73E0729368580436D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF92B05E693D857132CFE5E3 /* [CP] Check Pods Manifest.lock */ = {
+		19FB6302655D0E014125DC63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -906,6 +829,86 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B669AD4490433A76DEB3F60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E65DE4CF01FF34408D6C052 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A142A5C4A5701EC2F5A381E1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -928,6 +931,7 @@
 				217EB714202AA94E003C1BA9 /* ErrorViewController.swift in Sources */,
 				218F516E2025F484006EEDC2 /* HeaderViewModel.swift in Sources */,
 				218F517A2025FDDC006EEDC2 /* Network.swift in Sources */,
+				2129EF57202B454200C4CE86 /* ExtensionTransitionDelegate.swift in Sources */,
 				218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */,
 				217EB71C202AB280003C1BA9 /* LoadingViewController.swift in Sources */,
 				213D1BC72028A45300E34019 /* HTMLDocument.m in Sources */,
@@ -1051,7 +1055,7 @@
 /* Begin XCBuildConfiguration section */
 		218F514E2025AF1B006EEDC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A573BEB8A7B941728883E75 /* Pods-FileSharer.debug.xcconfig */;
+			baseConfigurationReference = D8528233B657883331DB85C1 /* Pods-FileSharer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1061,7 +1065,7 @@
 				CODE_SIGN_ENTITLEMENTS = FileSharer/FileSharer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
-				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
+				HEADER_SEARCH_PATHS = "$SDKROOT/usr/include/libxml2";
 				INFOPLIST_FILE = FileSharer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1082,7 +1086,7 @@
 		};
 		218F514F2025AF1B006EEDC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FB8BC59391D004C6D5DD13E /* Pods-FileSharer.release.xcconfig */;
+			baseConfigurationReference = 8F7411B6138F8DCE179010C8 /* Pods-FileSharer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1092,7 +1096,7 @@
 				CODE_SIGN_ENTITLEMENTS = FileSharer/FileSharer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCU9L9SQC4;
-				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
+				HEADER_SEARCH_PATHS = "$SDKROOT/usr/include/libxml2";
 				INFOPLIST_FILE = FileSharer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1220,7 +1224,7 @@
 		};
 		21B9AAEB2025ADE7006002DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2987BAD7E4075A33AD4CD378 /* Pods-MobileSafariEnhancer.debug.xcconfig */;
+			baseConfigurationReference = 9A0ECEEF2C7B811A4313B5F2 /* Pods-MobileSafariEnhancer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1240,7 +1244,7 @@
 		};
 		21B9AAEC2025ADE7006002DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51AE3F0F1C0D37D0B6234C30 /* Pods-MobileSafariEnhancer.release.xcconfig */;
+			baseConfigurationReference = A90AE0FFAC33926A4315456E /* Pods-MobileSafariEnhancer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

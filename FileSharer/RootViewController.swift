@@ -113,6 +113,7 @@ extension RootViewController {
             }
             self.view.layoutIfNeeded()
         }) { _ in
+            Store.shared.beforeQuit()
             self.extensionContext?.cancelRequest(withError: TaskError.cancel(userInfo: nil).instance)
         }
     }

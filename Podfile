@@ -10,7 +10,7 @@ def shared_pods
   pod 'PromiseKit/Alamofire', '~> 4.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'FontAwesome.swift'
-  pod 'RealmSwift'
+  pod 'MagicalRecord'
   pod 'DGActivityIndicatorView'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'SwipeCellKit'

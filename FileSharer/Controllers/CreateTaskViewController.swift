@@ -12,7 +12,7 @@ class CreateTaskViewController: UIViewController {
 
     let createTaskView = CreateTaskView(frame: .zero)
     private lazy var fileExplorer: FileExplorerViewController = {
-        let fevc = FileExplorerViewController(directoryURL: Store.shared.groupContainerURL)
+        let fevc = FileExplorerViewController(directoryURL: Store.shared.groupContainerURL ?? .documentDirectory)
         return fevc
     }()
 

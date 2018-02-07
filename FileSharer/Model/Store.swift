@@ -6,15 +6,15 @@
 //  Copyright © 2018年 MockingBot. All rights reserved.
 //
 
-import Foundation
 import MobileCoreServices
 import PromiseKit
+import MagicalRecord
 
 class Store {
 
     fileprivate let context: NSExtensionContext
     fileprivate let network = Network()
-    let groupContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: grounpIdentifier) ?? URL.documentDirectory
+    let groupContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: grounpIdentifier)
     let cookieJar = HTTPCookieStorage.sharedCookieStorage(forGroupContainerIdentifier: grounpIdentifier)
 
     var urlComponents: URLComponents? {
@@ -35,6 +35,7 @@ class Store {
 
     private init(context ctx: NSExtensionContext, completionHander: (()->Void)? = nil) {
         context = ctx
+        _ = groupContainerURL?.startAccessingSecurityScopedResource()
         DispatchQueue.global().async {
             for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
                 for case let itemProvider as NSItemProvider in obj.attachments! where itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
@@ -56,6 +57,9 @@ class Store {
                     }
                 }
             }
+        }
+        if let url = groupContainerURL?.appendingPathComponent("sharedDB.sqlite") {
+            MagicalRecord.setupCoreDataStackWithStore(at: url)
         }
     }
 
@@ -101,5 +105,10 @@ class Store {
                 cookieJar.setCookie(cookie)
             }
         }
+    }
+
+    func beforeQuit() {
+        MagicalRecord.cleanUp()
+        groupContainerURL?.stopAccessingSecurityScopedResource()
     }
 }
