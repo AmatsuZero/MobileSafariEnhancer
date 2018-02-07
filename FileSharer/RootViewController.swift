@@ -79,7 +79,7 @@ final class RootViewController: UIViewController {
             self.loadingMask.display(fromView: self.contentView, animated: true, customConstraint: { maker in
                 maker.left.right.top.bottom.equalTo(self.rootViewController.view)
             }) {
-                 self.loginCheck()
+                self.loadingMask.hide(animated: true)
             }
         }
     }
@@ -90,14 +90,12 @@ final class RootViewController: UIViewController {
     func loginCheck() {
         // 检查是否需要登录
         Store.shared.needLogin().then(on: .main) { isNecessary -> Void in
-            self.loadingMask.hide(animated: true) {
-                if isNecessary {
-                    self.contentView.addSubview(self.loginController.view)
-                    self.loginController.view.snp.makeConstraints({ maker in
-                        maker.left.right.top.bottom.equalTo(self.rootViewController.view)
-                    })
-                    self.addChildViewController(self.loginController)
-                }
+            if isNecessary {
+                self.contentView.addSubview(self.loginController.view)
+                self.loginController.view.snp.makeConstraints({ maker in
+                    maker.left.right.top.bottom.equalTo(self.rootViewController.view)
+                })
+                self.addChildViewController(self.loginController)
             }
         }
     }

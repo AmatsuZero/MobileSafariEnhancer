@@ -161,7 +161,6 @@ final class DirectoryContentViewModel {
         self.allItems = item.resource.filter {  filteringConfiguration.fileFilters.count == 0 || filteringConfiguration.fileFilters.matchesItem($0) }
         self.allItems = self.allItems.filter { filteringConfiguration.ignoredFileFilters.count == 0 || !filteringConfiguration.ignoredFileFilters.matchesItem($0) }
         self.itemsToDisplay = DirectoryContentViewModel.itemsWithAppliedFilterAndSortCriterias(searchQuery: "", sortMode: sortMode, items: self.allItems)
-
         NotificationCenter.default.addObserver(self, selector: #selector(handleItemsDeletedNotification(_:)), name: Notification.Name.ItemsDeleted, object: nil)
     }
 
@@ -252,8 +251,11 @@ final class DirectoryContentViewModel {
         for item in items {
             remove(item: item)
         }
-
         delegate?.directoryViewModelDidChangeItemsList(self)
+    }
+
+    var itemCount: Int {
+        return allItems.count
     }
 }
 

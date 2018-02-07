@@ -70,10 +70,8 @@ class LoginInfoModel {
     func initializeFillText(server: String, protocal: String) {
         getLastLoginInfo(server: server, protocol: protocal).then { info -> Void in
             if let user = info?.user, let pwd = info?.password {
-                DispatchQueue.main.async {
-                    self.userTextField.text = user
-                    self.passwordTextField.text = pwd
-                }
+                self.userTextField.text = user
+                self.passwordTextField.text = pwd
             } else {
                 self.userTextField.placeholder = "输入\(server)注册邮箱"
                 self.passwordTextField.placeholder = "输入\(server)密码"

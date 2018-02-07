@@ -6,7 +6,7 @@
 //  Copyright © 2018年 MockingBot. All rights reserved.
 //
 
-import UIKit
+import SnapKit
 
 protocol DirectoryViewControllerDelegate: class {
     func directoryViewController(_ controller: DirectoryViewController, didSelectItem item: Item<Any>)
@@ -55,10 +55,25 @@ final class DirectoryViewController: UIViewController {
                                                            left: 0.0,
                                                            bottom: 0.0,
                                                            right: 0.0))
+        view.addSubview(directoryContentViewController.view)
         navigationItem.rightBarButtonItem = directoryContentViewController.navigationItem.rightBarButtonItem
         navigationItem.title = directoryContentViewController.navigationItem.title
         view.sendSubview(toBack: directoryContentViewController.view)
         setUpLeftBarButtonItem()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.setNeedsLayout()
+        let hideSearchBar = directoryContentViewModel.itemCount == 0
+        searchController.searchBar.isHidden = hideSearchBar
+        directoryContentViewController.view.snp.updateConstraints { maker in
+            maker.edges.equalToSuperview().inset(hideSearchBar ? UIEdgeInsets.zero : UIEdgeInsets(top: searchController.searchBar.bounds.height,
+                                                                                                  left: 0.0,
+                                                                                                  bottom: 0.0,
+                                                                                                  right: 0.0))
+        }
+        view.layoutIfNeeded()
     }
 
     func setUpSearchBarController() {

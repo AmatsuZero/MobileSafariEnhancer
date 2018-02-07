@@ -6,7 +6,7 @@
 //  Copyright © 2018年 MockingBot. All rights reserved.
 //
 
-import UIKit
+import SnapKit
 
 final class UknownFileTypeViewController: UIViewController {
     let fileName: String
@@ -34,11 +34,13 @@ final class UknownFileTypeViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = ImageAssets.genericDocumentIcon
         view.addSubview(imageView)
-        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70.0).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70.0).isActive = true
-        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.0).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
+        imageView.snp.makeConstraints { maker in
+            maker.leading.equalToSuperview().offset(70)
+            maker.trailing.equalToSuperview().offset(-70)
+            maker.height.equalTo(imageView.snp.width).multipliedBy(1)
+            maker.centerX.equalToSuperview()
+            maker.centerY.equalToSuperview().offset(-50)
+        }
     }
 
     private func setUpTextLabel() {
@@ -49,8 +51,10 @@ final class UknownFileTypeViewController: UIViewController {
         label.textAlignment = .center
         label.lineBreakMode = .byTruncatingTail
         view.addSubview(label)
-        label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0).isActive = true
+        label.snp.makeConstraints { maker in
+            maker.top.equalTo(imageView.snp.bottom).offset(20)
+            maker.leading.equalToSuperview().offset(20)
+            maker.trailing.equalToSuperview().offset(-20)
+        }
     }
 }

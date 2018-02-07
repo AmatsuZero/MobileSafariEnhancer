@@ -6,7 +6,7 @@
 //  Copyright © 2018年 MockingBot. All rights reserved.
 //
 
-import UIKit
+import SnapKit
 
 protocol DirectoryContentViewControllerDelegate: class {
     func directoryContentViewController(_ controller: DirectoryContentViewController, didChangeEditingStatus isEditing: Bool)
@@ -21,7 +21,7 @@ final class DirectoryContentViewController: UICollectionViewController {
     fileprivate let viewModel: DirectoryContentViewModel
 
     private let toolbar: UIToolbar
-    private var toolbarBottomConstraint: NSLayoutConstraint?
+    private var toolbarBottomConstraint: Constraint?
     private var isFirstLayout = true
 
     override var collectionViewLayout: UICollectionViewFlowLayout {
@@ -40,6 +40,8 @@ final class DirectoryContentViewController: UICollectionViewController {
 
         super.init(collectionViewLayout: layout)
         viewModel.delegate = self
+        collectionView?.emptyDataSetSource = self
+        collectionView?.emptyDataSetDelegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -75,7 +77,7 @@ final class DirectoryContentViewController: UICollectionViewController {
         collectionView.addSubview(toolbar)
 
         self.toolbarBottomConstraint = toolbar.pinToBottom(of: view)
-        self.toolbarBottomConstraint?.constant = toolbar.bounds.height
+        self.toolbarBottomConstraint?.update(offset: toolbar.bounds.height)
 
         syncWithViewModel(false)
     }
@@ -107,8 +109,9 @@ final class DirectoryContentViewController: UICollectionViewController {
             indexPathsForSelectedItems.forEach { collectionView.deselectItem(at: $0, animated: animated) }
         }
         collectionView.setEditing(editing, animated: animated)
+        collectionView.setNeedsLayout()
         UIView.animate(withDuration: 0.2) {
-            self.toolbarBottomConstraint?.constant = editing ? 0.0 : self.toolbar.bounds.height
+            self.toolbarBottomConstraint?.update(offset: editing ? 0.0 : self.toolbar.bounds.height)
             collectionView.contentInset.bottom = editing ? self.toolbar.bounds.height : 0.0
             collectionView.scrollIndicatorInsets = collectionView.contentInset
             collectionView.layoutIfNeeded()

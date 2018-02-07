@@ -14,6 +14,7 @@ class Store {
 
     fileprivate let context: NSExtensionContext
     fileprivate let network = Network()
+    let groupContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: grounpIdentifier) ?? URL.documentDirectory
     let cookieJar = HTTPCookieStorage.sharedCookieStorage(forGroupContainerIdentifier: grounpIdentifier)
 
     var urlComponents: URLComponents? {
@@ -32,7 +33,7 @@ class Store {
     let loginInfoModel = LoginInfoModel()
     var resourceParser: ResourceParser?
 
-    private init(context ctx: NSExtensionContext) {
+    private init(context ctx: NSExtensionContext, completionHander: (()->Void)? = nil) {
         context = ctx
         DispatchQueue.global().async {
             for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
@@ -50,6 +51,7 @@ class Store {
                                                     if let cookie = info["cookie"] as? String {
                                                         self?.updateCookieJar(cookieStr: cookie)
                                                     }
+                                                completionHander?()
                                             }
                     }
                 }
@@ -57,8 +59,9 @@ class Store {
         }
     }
 
-    class func createStore(context: NSExtensionContext) {
-        Store.shared = Store(context: context)
+    class func createStore(context: NSExtensionContext,
+                           completionHander: (()->Void)? = nil) {
+        Store.shared = Store(context: context, completionHander: completionHander)
     }
 
     //TODO: 这里目前只有判断钥匙串里面是否已经有保存的信息，对于一些暂不需要登录信息就能下载的地址，也可以直接忽略
@@ -80,7 +83,7 @@ class Store {
                     if let host = url.host, let scheme = url.scheme {
                         self.loginInfoModel.getLastLoginInfo(server: host, protocol: scheme).then { info -> Void in
                             resolve(info == nil)
-                            }.catch { error in
+                        }.catch { error in
                                 resolve(false)
                         }
                     } else {

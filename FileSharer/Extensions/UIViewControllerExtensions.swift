@@ -6,7 +6,7 @@
 //  Copyright © 2018年 MockingBot. All rights reserved.
 //
 
-import UIKit
+import SnapKit
 
 extension UIViewController {
     @nonobjc static var kActivityIndicatorKey = "fer_activityIndicatorView"
@@ -80,7 +80,9 @@ extension UIViewController {
                                        insets: UIEdgeInsets = UIEdgeInsets.zero) {
         view.addSubview(content.view)
         addChildViewController(content)
-        content.view.frame = UIEdgeInsetsInsetRect(view.bounds, insets)
+        content.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(insets)
+        }
         content.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         content.didMove(toParentViewController: self)
     }

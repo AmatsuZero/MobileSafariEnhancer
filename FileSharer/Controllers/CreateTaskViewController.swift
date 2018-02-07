@@ -11,7 +11,10 @@ import UIKit
 class CreateTaskViewController: UIViewController {
 
     let createTaskView = CreateTaskView(frame: .zero)
-    private let fileExplorer = FileExplorerViewController()
+    private lazy var fileExplorer: FileExplorerViewController = {
+        let fevc = FileExplorerViewController(directoryURL: Store.shared.groupContainerURL)
+        return fevc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()

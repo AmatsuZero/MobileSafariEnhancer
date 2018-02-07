@@ -56,6 +56,7 @@
 		217EB724202AB497003C1BA9 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB723202AB497003C1BA9 /* ActionViewController.swift */; };
 		217EB726202AB832003C1BA9 /* FileVCViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB725202AB832003C1BA9 /* FileVCViews.swift */; };
 		217EB728202ABCBD003C1BA9 /* FileExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB727202ABCBD003C1BA9 /* FileExploreViewController.swift */; };
+		217EB72B202B1119003C1BA9 /* DirectoryContentViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB72A202B1119003C1BA9 /* DirectoryContentViewControllerExtensions.swift */; };
 		218F514D2025AF1B006EEDC2 /* FileSharer.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 218F51432025AF1B006EEDC2 /* FileSharer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		218F51542025D55C006EEDC2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51532025D55C006EEDC2 /* RootViewController.swift */; };
 		218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F515C2025DB90006EEDC2 /* UIColorExtensions.swift */; };
@@ -206,6 +207,7 @@
 		217EB723202AB497003C1BA9 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		217EB725202AB832003C1BA9 /* FileVCViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileVCViews.swift; sourceTree = "<group>"; };
 		217EB727202ABCBD003C1BA9 /* FileExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExploreViewController.swift; sourceTree = "<group>"; };
+		217EB72A202B1119003C1BA9 /* DirectoryContentViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryContentViewControllerExtensions.swift; sourceTree = "<group>"; };
 		218F51432025AF1B006EEDC2 /* FileSharer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FileSharer.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		218F514A2025AF1B006EEDC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218F51522025D55B006EEDC2 /* FileSharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FileSharer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -365,6 +367,14 @@
 			path = HTMLParser;
 			sourceTree = "<group>";
 		};
+		217EB729202B10EA003C1BA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				217EB72A202B1119003C1BA9 /* DirectoryContentViewControllerExtensions.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		218F51442025AF1B006EEDC2 /* FileSharer */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +434,7 @@
 		218F51592025D8EB006EEDC2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				217EB729202B10EA003C1BA9 /* Controllers */,
 				218F515C2025DB90006EEDC2 /* UIColorExtensions.swift */,
 				218F51892026A1D6006EEDC2 /* GDC.swift */,
 				213D1BCC2028B74900E34019 /* StringExtensions.swift */,
@@ -912,6 +923,7 @@
 				211EE6B5202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift in Sources */,
 				217EB722202AB41A003C1BA9 /* FileViewController.swift in Sources */,
 				218F51542025D55C006EEDC2 /* RootViewController.swift in Sources */,
+				217EB72B202B1119003C1BA9 /* DirectoryContentViewControllerExtensions.swift in Sources */,
 				217EB726202AB832003C1BA9 /* FileVCViews.swift in Sources */,
 				217EB714202AA94E003C1BA9 /* ErrorViewController.swift in Sources */,
 				218F516E2025F484006EEDC2 /* HeaderViewModel.swift in Sources */,
