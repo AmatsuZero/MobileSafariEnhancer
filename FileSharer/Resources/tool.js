@@ -7,12 +7,18 @@ getResource: function() {
 },
 
 run: function(arguments) {
-    arguments.completionFunction({"url": document.baseURI, "resource": this.getResource(), "htmlStr": document.documentElement.innerHTML });
+    arguments.completionFunction({
+                                 "url": document.baseURI,
+                                 "resource": this.getResource(),
+                                 "htmlStr": document.documentElement.innerHTML,
+                                 "cookie": document.cookie
+                                 });
 },
 
 finalize: function(arguments) {
     eval(arguments["jsCode"]);
-  }
+}
 };
 
 var ExtensionPreprocessingJS = new MyExtensionJavaScriptClass;
+

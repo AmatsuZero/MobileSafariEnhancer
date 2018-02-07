@@ -40,12 +40,16 @@ class Store {
                     itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String,
                                           options: nil) { [weak self] item, _ in
                                             if let results = item as? NSDictionary,
-                                                let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                                                let baseURI = info["url"] as? String  {
-                                                self?.urlComponents = URLComponents(string: baseURI)
-                                                if let htmlStr = info["htmlStr"] as? String {
-                                                    self?.resourceParser = ResourceParser(htmlStr: htmlStr)
-                                                }
+                                                let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary {
+                                                    if let baseURI = info["url"] as? String  {
+                                                        self?.urlComponents = URLComponents(string: baseURI)
+                                                    }
+                                                    if let htmlStr = info["htmlStr"] as? String {
+                                                        self?.resourceParser = ResourceParser(htmlStr: htmlStr)
+                                                    }
+                                                    if let cookie = info["cookie"] as? String {
+                                                        self?.updateCookieJar(cookieStr: cookie)
+                                                    }
                                             }
                     }
                 }
@@ -85,6 +89,14 @@ class Store {
                 }
             }
 
+        }
+    }
+
+    fileprivate func updateCookieJar(cookieStr: String)  {
+        cookieStr.components(separatedBy: ";").forEach { single in
+            if let cookie = single.cookie(domain: urlComponents?.host) {
+                cookieJar.setCookie(cookie)
+            }
         }
     }
 }
