@@ -18,14 +18,11 @@ class Store {
 
     var urlComponents: URLComponents? {
         didSet {
-            if let components = urlComponents, let host = components.host, let url = components.url {
+            if let components = urlComponents, let host = components.host {
                 headerModel.setValue(imageURL: try! Router.favicon(domain: host) .asURL(),
                                      address: host)
                 loginInfoModel.initializeFillText(server: host,
                                                   protocal: components.scheme!)
-                ResourceParser.getEd2kResources(url: url).then { ed2ks in
-                    print(ed2ks)
-                }
             }
         }
     }
@@ -33,6 +30,7 @@ class Store {
     // View-Models
     let headerModel = HeaderViewModel()
     let loginInfoModel = LoginInfoModel()
+    var resourceParser: ResourceParser?
 
     private init(context ctx: NSExtensionContext) {
         context = ctx
@@ -40,11 +38,14 @@ class Store {
             for case let obj as NSExtensionItem in ctx.inputItems where obj.attachments != nil {
                 for case let itemProvider as NSItemProvider in obj.attachments! where itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as String) {
                     itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String,
-                                          options: nil) { item, _ in
+                                          options: nil) { [weak self] item, _ in
                                             if let results = item as? NSDictionary,
                                                 let info = results[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                                                 let baseURI = info["url"] as? String  {
-                                                self.urlComponents = URLComponents(string: baseURI)
+                                                self?.urlComponents = URLComponents(string: baseURI)
+                                                if let htmlStr = info["htmlStr"] as? String {
+                                                    self?.resourceParser = ResourceParser(htmlStr: htmlStr)
+                                                }
                                             }
                     }
                 }

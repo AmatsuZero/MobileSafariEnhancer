@@ -54,7 +54,6 @@ extension PreviewViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         webView.evaluateJavaScript("navigator.userAgent") { value, error in
             if let ua = value as? String {
                 print(ua)

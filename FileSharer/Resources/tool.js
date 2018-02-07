@@ -7,7 +7,7 @@ getResource: function() {
 },
 
 run: function(arguments) {
-    arguments.completionFunction({"url": document.baseURI, "resource": this.getResource() });
+    arguments.completionFunction({"url": document.baseURI, "resource": this.getResource(), "htmlStr": document.documentElement.innerHTML });
 },
 
 finalize: function(arguments) {

@@ -20,49 +20,53 @@ struct ResourceLink {
 
 class ResourceParser {
 
-    class func getEd2kResources(url: URL) -> Promise<[ResourceLink]> {
-        var document:HTMLDocument?
+    private var document:HTMLDocument?
+
+    init(htmlStr: String) {
+        document = try? HTMLDocument(htmlString: htmlStr)
+    }
+
+    func getEd2kResources() -> Promise<[ResourceLink]> {
         return firstly {
-            Network.shared.sessionManager.request(url).responseData()
-        }.then(on: DispatchQueue.global()) { data -> Promise<[HTMLNode]?> in
             return Promise { resolve, reject in
-                document = try HTMLDocument(data: data)
-                resolve(document?.rootNode?.nodes(forXPath: "//a[@href]"))
+                DispatchQueue.global().async {
+                    resolve(self.document?.rootNode?.nodes(forXPath: "//a[@href]"))
+                }
             }
-        }.then(on: DispatchQueue.global()) { nodes -> [ResourceLink] in
-            var results = [ResourceLink]()
-            nodes?.filter({$0.htmlString?.length ?? 0 > 200 })
-                .map({return $0.htmlString!})
-                .forEach({ raw in
-                    var ed2k = ""
-                    if raw.components(separatedBy: "ed2k://").count >= 2 { // 查找ed2k链接
-                        let range = raw.range(of: "ed2k://.*.\\|\\/", options: .regularExpression)
-                        let strClearArray = raw.substring(with: range).components(separatedBy: "|/")
-                        if strClearArray.count < 2 {
-                            ed2k = raw as String
-                        } else {
-                            ed2k = "\(strClearArray.first!)|/"
+            }.then(on: DispatchQueue.global()) { nodes -> [ResourceLink] in
+                var results = [ResourceLink]()
+                nodes?.filter({$0.htmlString?.length ?? 0 > 200 })
+                    .map({return $0.htmlString!})
+                    .forEach({ raw in
+                        var ed2k = ""
+                        if raw.components(separatedBy: "ed2k://").count >= 2 { // 查找ed2k链接
+                            let range = raw.range(of: "ed2k://.*.\\|\\/", options: .regularExpression)
+                            let strClearArray = raw.substring(with: range).components(separatedBy: "|/")
+                            if strClearArray.count < 2 {
+                                ed2k = raw as String
+                            } else {
+                                ed2k = "\(strClearArray.first!)|/"
+                            }
+                            results.append(ResourceLink(link: ed2k, name: ed2k.searchEd2kName(), type: .ed2k))
+                        } else if raw.components(separatedBy: "magnet:?").count >= 2 { // 查找磁力链接
+                            let range = raw.range(of: "magnet:?[^\"]+", options: .regularExpression)
+                            ed2k = raw.substring(with: range)
                         }
-                        results.append(ResourceLink(link: ed2k, name: ed2k.searchEd2kName(), type: .ed2k))
-                    } else if raw.components(separatedBy: "magnet:?").count >= 2 { // 查找磁力链接
-                        let range = raw.range(of: "magnet:?[^\"]+", options: .regularExpression)
-                        ed2k = raw.substring(with: range)
-                    }
-                    if !ed2k.isEmpty {
-                        results.append(ResourceLink(link: ed2k, name: ed2k.searchEd2kName(), type: .magnet))
-                    }
-                })
-             return results
-        }.then(on: DispatchQueue.global()) { results in // 查找非标签内的ed2k
-            guard results.isEmpty else {
-                return Promise(value: results)
-            }
-            let nodes = document?.rootNode?.nodes(forXPath: "/*")
-            return Promise(value: ResourceParser.sortout(resources: nodes))
+                        if !ed2k.isEmpty {
+                            results.append(ResourceLink(link: ed2k, name: ed2k.searchEd2kName(), type: .magnet))
+                        }
+                    })
+                return results
+            }.then(on: DispatchQueue.global()) { results in // 查找非标签内的ed2k
+                guard results.isEmpty else {
+                    return Promise(value: results)
+                }
+                let nodes = self.document?.rootNode?.nodes(forXPath: "/*")
+                return Promise(value: self.sortout(resources: nodes))
         }
     }
 
-    class func sortout(resources: [HTMLNode]?) -> [ResourceLink] {
+    func sortout(resources: [HTMLNode]?) -> [ResourceLink] {
         let clearEd2kStr: (String) -> String = { ed2k in
             let start = ed2k.range(of: "ed2k://", options: .regularExpression)?.lowerBound
             let end = ed2k.range(of: "|/", options: .regularExpression)?.upperBound
