@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C75285CDC565C7BAFBA3549 /* Pods_MobileSafariEnhancer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */; };
+		211EE6B5202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211EE6B4202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift */; };
 		213D1BB720289E5F00E34019 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D1BB620289E5F00E34019 /* libxml2.tbd */; };
 		213D1BB920289E9D00E34019 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D1BB820289E9D00E34019 /* libxml2.2.tbd */; };
 		213D1BC62028A45300E34019 /* HTMLNode+XPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1BC12028A45300E34019 /* HTMLNode+XPath.m */; };
@@ -40,6 +41,21 @@
 		213D1C032029F52500E34019 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D1C022029F52500E34019 /* UIAlertController.swift */; };
 		213D1C052029F57000E34019 /* UIToolbarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D1C042029F57000E34019 /* UIToolbarExtensions.swift */; };
 		213D1C072029F58F00E34019 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D1C062029F58F00E34019 /* UIViewExtensions.swift */; };
+		213D1C0F202A01F400E34019 /* SHKData.h in Headers */ = {isa = PBXBuildFile; fileRef = 213D1C0D202A01F400E34019 /* SHKData.h */; };
+		213D1C10202A01F400E34019 /* SHKData.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1C0E202A01F400E34019 /* SHKData.m */; };
+		213D1C15202A074300E34019 /* SHKSocketIOChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 213D1C13202A074300E34019 /* SHKSocketIOChannel.h */; };
+		213D1C16202A074300E34019 /* SHKSocketIOChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D1C14202A074300E34019 /* SHKSocketIOChannel.m */; };
+		217EB714202AA94E003C1BA9 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB713202AA94E003C1BA9 /* ErrorViewController.swift */; };
+		217EB716202AAF43003C1BA9 /* DirectoryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB715202AAF43003C1BA9 /* DirectoryContentViewController.swift */; };
+		217EB718202AB222003C1BA9 /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB717202AB222003C1BA9 /* DirectoryViewController.swift */; };
+		217EB71A202AB235003C1BA9 /* DirectoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB719202AB235003C1BA9 /* DirectoryViewModel.swift */; };
+		217EB71C202AB280003C1BA9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB71B202AB280003C1BA9 /* LoadingViewController.swift */; };
+		217EB71E202AB38C003C1BA9 /* ItemPresentationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB71D202AB38C003C1BA9 /* ItemPresentationCoordinator.swift */; };
+		217EB720202AB3E7003C1BA9 /* FileItemPresentationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB71F202AB3E7003C1BA9 /* FileItemPresentationCoordinator.swift */; };
+		217EB722202AB41A003C1BA9 /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB721202AB41A003C1BA9 /* FileViewController.swift */; };
+		217EB724202AB497003C1BA9 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB723202AB497003C1BA9 /* ActionViewController.swift */; };
+		217EB726202AB832003C1BA9 /* FileVCViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB725202AB832003C1BA9 /* FileVCViews.swift */; };
+		217EB728202ABCBD003C1BA9 /* FileExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EB727202ABCBD003C1BA9 /* FileExploreViewController.swift */; };
 		218F514D2025AF1B006EEDC2 /* FileSharer.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 218F51432025AF1B006EEDC2 /* FileSharer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		218F51542025D55C006EEDC2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F51532025D55C006EEDC2 /* RootViewController.swift */; };
 		218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F515C2025DB90006EEDC2 /* UIColorExtensions.swift */; };
@@ -139,6 +155,7 @@
 /* Begin PBXFileReference section */
 		0A573BEB8A7B941728883E75 /* Pods-FileSharer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileSharer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileSharer/Pods-FileSharer.debug.xcconfig"; sourceTree = "<group>"; };
 		18A7E099C57CB446A0A78D8A /* Pods_MobileSafariEnhancer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileSafariEnhancer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		211EE6B4202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryItemPresentationCoordinator.swift; sourceTree = "<group>"; };
 		213D1BB620289E5F00E34019 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		213D1BB820289E9D00E34019 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		213D1BC02028A45300E34019 /* HTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLDocument.h; sourceTree = "<group>"; };
@@ -174,6 +191,21 @@
 		213D1C022029F52500E34019 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		213D1C042029F57000E34019 /* UIToolbarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbarExtensions.swift; sourceTree = "<group>"; };
 		213D1C062029F58F00E34019 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		213D1C0D202A01F400E34019 /* SHKData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKData.h; sourceTree = "<group>"; };
+		213D1C0E202A01F400E34019 /* SHKData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKData.m; sourceTree = "<group>"; };
+		213D1C13202A074300E34019 /* SHKSocketIOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHKSocketIOChannel.h; sourceTree = "<group>"; };
+		213D1C14202A074300E34019 /* SHKSocketIOChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHKSocketIOChannel.m; sourceTree = "<group>"; };
+		217EB713202AA94E003C1BA9 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		217EB715202AAF43003C1BA9 /* DirectoryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryContentViewController.swift; sourceTree = "<group>"; };
+		217EB717202AB222003C1BA9 /* DirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
+		217EB719202AB235003C1BA9 /* DirectoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryViewModel.swift; sourceTree = "<group>"; };
+		217EB71B202AB280003C1BA9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		217EB71D202AB38C003C1BA9 /* ItemPresentationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPresentationCoordinator.swift; sourceTree = "<group>"; };
+		217EB71F202AB3E7003C1BA9 /* FileItemPresentationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileItemPresentationCoordinator.swift; sourceTree = "<group>"; };
+		217EB721202AB41A003C1BA9 /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
+		217EB723202AB497003C1BA9 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		217EB725202AB832003C1BA9 /* FileVCViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileVCViews.swift; sourceTree = "<group>"; };
+		217EB727202ABCBD003C1BA9 /* FileExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExploreViewController.swift; sourceTree = "<group>"; };
 		218F51432025AF1B006EEDC2 /* FileSharer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FileSharer.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		218F514A2025AF1B006EEDC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218F51522025D55B006EEDC2 /* FileSharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FileSharer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -272,6 +304,12 @@
 			children = (
 				213D1BE62029903F00E34019 /* ImageViewController.swift */,
 				213D1BF62029963500E34019 /* UnknownFileTypeViewController.swift */,
+				217EB713202AA94E003C1BA9 /* ErrorViewController.swift */,
+				217EB715202AAF43003C1BA9 /* DirectoryContentViewController.swift */,
+				217EB717202AB222003C1BA9 /* DirectoryViewController.swift */,
+				217EB71B202AB280003C1BA9 /* LoadingViewController.swift */,
+				217EB721202AB41A003C1BA9 /* FileViewController.swift */,
+				217EB723202AB497003C1BA9 /* ActionViewController.swift */,
 			);
 			path = FileExplorer;
 			sourceTree = "<group>";
@@ -285,6 +323,10 @@
 				213D1BE220298F8400E34019 /* Result.swift */,
 				213D1BE420298FD500E34019 /* Configuration.swift */,
 				213D1BE8202990E600E34019 /* ImageAssets.swift */,
+				211EE6B4202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift */,
+				217EB71D202AB38C003C1BA9 /* ItemPresentationCoordinator.swift */,
+				217EB71F202AB3E7003C1BA9 /* FileItemPresentationCoordinator.swift */,
+				217EB719202AB235003C1BA9 /* DirectoryViewModel.swift */,
 			);
 			path = FileExplorer;
 			sourceTree = "<group>";
@@ -294,8 +336,20 @@
 			children = (
 				213D1BDD20298E5800E34019 /* ItemCell.swift */,
 				213D1BF0202992C500E34019 /* CheckmarkButton.swift */,
+				217EB725202AB832003C1BA9 /* FileVCViews.swift */,
 			);
 			path = FileExplorer;
+			sourceTree = "<group>";
+		};
+		213D1C082029FB4100E34019 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				213D1C0D202A01F400E34019 /* SHKData.h */,
+				213D1C0E202A01F400E34019 /* SHKData.m */,
+				213D1C13202A074300E34019 /* SHKSocketIOChannel.h */,
+				213D1C14202A074300E34019 /* SHKSocketIOChannel.m */,
+			);
+			path = Socket;
 			sourceTree = "<group>";
 		};
 		2165593B2028992C00195F0A /* HTMLParser */ = {
@@ -409,6 +463,7 @@
 			children = (
 				213D1BCF2029886000E34019 /* FileExplorer */,
 				218F516D2025F484006EEDC2 /* HeaderViewModel.swift */,
+				217EB727202ABCBD003C1BA9 /* FileExploreViewController.swift */,
 				218F51992026B767006EEDC2 /* LoginInfoModel.swift */,
 			);
 			path = ViewModel;
@@ -479,6 +534,7 @@
 		21F858B62027F985008D84B8 /* SimpleHTTPKit */ = {
 			isa = PBXGroup;
 			children = (
+				213D1C082029FB4100E34019 /* Socket */,
 				21F858B72027F985008D84B8 /* SimpleHTTPKit.h */,
 				21F858B82027F985008D84B8 /* Info.plist */,
 			);
@@ -522,7 +578,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D1C15202A074300E34019 /* SHKSocketIOChannel.h in Headers */,
 				21F858B92027F985008D84B8 /* SimpleHTTPKit.h in Headers */,
+				213D1C0F202A01F400E34019 /* SHKData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +673,7 @@
 		21B9AACC2025ADE6006002DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SHK;
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = MockingBot;
@@ -653,6 +712,7 @@
 					};
 					21F858B42027F985008D84B8 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -730,6 +790,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MobileSafariEnhancer/Pods-MobileSafariEnhancer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -749,6 +810,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -847,14 +909,23 @@
 				213D1BF32029930600E34019 /* BezierPathExtensions.swift in Sources */,
 				213D1C052029F57000E34019 /* UIToolbarExtensions.swift in Sources */,
 				213D1BF72029963500E34019 /* UnknownFileTypeViewController.swift in Sources */,
+				211EE6B5202AA35C007E8DD0 /* DirectoryItemPresentationCoordinator.swift in Sources */,
+				217EB722202AB41A003C1BA9 /* FileViewController.swift in Sources */,
 				218F51542025D55C006EEDC2 /* RootViewController.swift in Sources */,
+				217EB726202AB832003C1BA9 /* FileVCViews.swift in Sources */,
+				217EB714202AA94E003C1BA9 /* ErrorViewController.swift in Sources */,
 				218F516E2025F484006EEDC2 /* HeaderViewModel.swift in Sources */,
 				218F517A2025FDDC006EEDC2 /* Network.swift in Sources */,
 				218F515D2025DB90006EEDC2 /* UIColorExtensions.swift in Sources */,
+				217EB71C202AB280003C1BA9 /* LoadingViewController.swift in Sources */,
 				213D1BC72028A45300E34019 /* HTMLDocument.m in Sources */,
 				218F518820269B3E006EEDC2 /* LoadingView.swift in Sources */,
+				217EB728202ABCBD003C1BA9 /* FileExploreViewController.swift in Sources */,
 				218F517E20261D07006EEDC2 /* Preview.swift in Sources */,
+				217EB720202AB3E7003C1BA9 /* FileItemPresentationCoordinator.swift in Sources */,
+				217EB71E202AB38C003C1BA9 /* ItemPresentationCoordinator.swift in Sources */,
 				213D1BE72029903F00E34019 /* ImageViewController.swift in Sources */,
+				217EB724202AB497003C1BA9 /* ActionViewController.swift in Sources */,
 				218F515F2025DDAD006EEDC2 /* BaseNavigationController.swift in Sources */,
 				218F518A2026A1D6006EEDC2 /* GDC.swift in Sources */,
 				213D1BD920298B7100E34019 /* ThumbnailGenerator.swift in Sources */,
@@ -863,6 +934,7 @@
 				213D1BD320298A8200E34019 /* DirectoryContentViewModel.swift in Sources */,
 				213D1BC82028A45300E34019 /* HTMLNode.m in Sources */,
 				213D1BF1202992C500E34019 /* CheckmarkButton.swift in Sources */,
+				217EB718202AB222003C1BA9 /* DirectoryViewController.swift in Sources */,
 				213D1BDE20298E5800E34019 /* ItemCell.swift in Sources */,
 				213D1BFF2029F35B00E34019 /* UICollectionViewExtensions.swift in Sources */,
 				213D1BED202991F300E34019 /* URLExtensions.swift in Sources */,
@@ -870,6 +942,7 @@
 				218F519A2026B767006EEDC2 /* LoginInfoModel.swift in Sources */,
 				213D1BD120298A2400E34019 /* FileViewModel.swift in Sources */,
 				218F51662025E4C8006EEDC2 /* MainViewController.swift in Sources */,
+				217EB716202AAF43003C1BA9 /* DirectoryContentViewController.swift in Sources */,
 				218F51682025E995006EEDC2 /* Constants.swift in Sources */,
 				213D1BEB202991B400E34019 /* DoubleExtensions.swift in Sources */,
 				218F517C2026111B006EEDC2 /* CreateTaskView.swift in Sources */,
@@ -882,6 +955,7 @@
 				21F8589D20275284008D84B8 /* PreviewViewController.swift in Sources */,
 				218F51952026B545006EEDC2 /* LoginView.swift in Sources */,
 				218F516C2025EBB0006EEDC2 /* ErrorEnum.swift in Sources */,
+				217EB71A202AB235003C1BA9 /* DirectoryViewModel.swift in Sources */,
 				218F518D2026B2CE006EEDC2 /* LoginViewController.swift in Sources */,
 				218F51622025DFA1006EEDC2 /* CreateTaskViewController.swift in Sources */,
 				218F51642025DFBC006EEDC2 /* TaskListTableViewController.swift in Sources */,
@@ -918,6 +992,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D1C10202A01F400E34019 /* SHKData.m in Sources */,
+				213D1C16202A074300E34019 /* SHKSocketIOChannel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1230,6 +1306,7 @@
 		21F858BF2027F985008D84B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -1248,6 +1325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MockingBot.SimpleHTTPKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1258,6 +1336,7 @@
 		21F858C02027F985008D84B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;

@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
   - DGActivityIndicatorView (2.1.1)
+  - DZNEmptyDataSet (1.8.1)
   - FontAwesome.swift (1.3.2)
   - KeychainAccess (3.1.0)
   - Material (2.13.5):
@@ -33,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - DGActivityIndicatorView
+  - DZNEmptyDataSet
   - FontAwesome.swift
   - KeychainAccess
   - Material
@@ -48,6 +50,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Material: ced3fd11882147b135f897ca20227174bb104ad0
@@ -63,6 +66,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
   Tabman: 348ff2d3fc88587ef60bae5bce6698a8e1984cc2
 
-PODFILE CHECKSUM: b5ec8f4f5ac1745954b481fa3503715c0460b85f
+PODFILE CHECKSUM: b44a84a5aa5630caea2ae1b9132523166e822ba9
 
 COCOAPODS: 1.4.0

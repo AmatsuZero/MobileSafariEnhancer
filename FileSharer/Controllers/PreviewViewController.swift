@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class PreviewViewController: UIViewController {
+final class PreviewViewController: UIViewController {
 
     private var webview: Preview
     let url: URL
@@ -54,6 +54,7 @@ extension PreviewViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
         webView.evaluateJavaScript("navigator.userAgent") { value, error in
             if let ua = value as? String {
                 print(ua)

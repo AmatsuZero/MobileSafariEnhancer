@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 @objc(RootViewController)
-class RootViewController: UIViewController {
+final class RootViewController: UIViewController {
 
     private let rootViewController = MainViewController()
     private let contentView = UIView()
@@ -20,6 +20,7 @@ class RootViewController: UIViewController {
         let controller = LoginViewController()
         return controller
     }()
+    
     override func beginRequest(with context: NSExtensionContext) {
         super.beginRequest(with: context)
         Store.createStore(context: context)
@@ -78,7 +79,7 @@ class RootViewController: UIViewController {
             self.loadingMask.display(fromView: self.contentView, animated: true, customConstraint: { maker in
                 maker.left.right.top.bottom.equalTo(self.rootViewController.view)
             }) {
-               // self.loginCheck()
+                 self.loginCheck()
             }
         }
     }
@@ -89,8 +90,8 @@ class RootViewController: UIViewController {
     func loginCheck() {
         // 检查是否需要登录
         Store.shared.needLogin().then(on: .main) { isNecessary -> Void in
-            if isNecessary {
-                self.loadingMask.hide(animated: true) {
+            self.loadingMask.hide(animated: true) {
+                if isNecessary {
                     self.contentView.addSubview(self.loginController.view)
                     self.loginController.view.snp.makeConstraints({ maker in
                         maker.left.right.top.bottom.equalTo(self.rootViewController.view)

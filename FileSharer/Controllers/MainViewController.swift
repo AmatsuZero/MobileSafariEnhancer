@@ -10,7 +10,7 @@ import UIKit
 import Tabman
 import Pageboy
 
-class MainViewController: TabmanViewController {
+final class MainViewController: TabmanViewController {
 
     private var controllers: [BaseNavigationController] = {
         return [

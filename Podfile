@@ -15,6 +15,7 @@ def shared_pods
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'SwipeCellKit'
   pod 'KeychainAccess'
+  pod 'DZNEmptyDataSet'
 end
 
 target 'FileSharer' do
