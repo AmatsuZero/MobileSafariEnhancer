@@ -13,20 +13,10 @@ import MagicalRecord
 class Store {
 
     fileprivate let context: NSExtensionContext
-    fileprivate let network = Network()
     let groupContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: grounpIdentifier)
     let cookieJar = HTTPCookieStorage.sharedCookieStorage(forGroupContainerIdentifier: grounpIdentifier)
-
-    var urlComponents: URLComponents? {
-        didSet {
-            if let components = urlComponents, let host = components.host {
-                headerModel.setValue(imageURL: try! Router.favicon(domain: host) .asURL(),
-                                     address: host)
-                loginInfoModel.initializeFillText(server: host,
-                                                  protocal: components.scheme!)
-            }
-        }
-    }
+    var sharedURLCache: URLCache?
+    var urlComponents: URLComponents?
     static var shared: Store!
     // View-Models
     let headerModel = HeaderViewModel()
@@ -52,20 +42,36 @@ class Store {
                                                     if let cookie = info["cookie"] as? String {
                                                         self?.updateCookieJar(cookieStr: cookie)
                                                     }
+                                                self?.updateModel()
                                                 completionHander?()
                                             }
                     }
                 }
             }
         }
-        if let url = groupContainerURL?.appendingPathComponent("sharedDB.sqlite") {
-            MagicalRecord.setupCoreDataStackWithStore(at: url)
+        if let containerURL = groupContainerURL {
+            let dbURL = containerURL.appendingPathComponent("sharedDB.sqlite")
+            MagicalRecord.setupCoreDataStackWithStore(at: dbURL)
+            let fileManager = FileManager.default
+            let downloaedURL = containerURL.appendingPathComponent("Downloaded")
+            if !fileManager.fileExists(atPath: downloaedURL.path) {
+                try? fileManager.createDirectory(at: downloaedURL,
+                                                    withIntermediateDirectories: false,
+                                                    attributes: nil)
+            }
+            let downloadingURL = containerURL.appendingPathComponent("Downloading")
+            if !fileManager.fileExists(atPath: downloadingURL.path) {
+                try? fileManager.createDirectory(at: downloadingURL,
+                                                 withIntermediateDirectories: false,
+                                                 attributes: nil)
+            }
         }
     }
 
     class func createStore(context: NSExtensionContext,
                            completionHander: (()->Void)? = nil) {
         Store.shared = Store(context: context, completionHander: completionHander)
+
     }
 
     //TODO: 这里目前只有判断钥匙串里面是否已经有保存的信息，对于一些暂不需要登录信息就能下载的地址，也可以直接忽略
@@ -105,10 +111,22 @@ class Store {
                 cookieJar.setCookie(cookie)
             }
         }
+        Network.shared.setCookieStorage(cookieJar)
+    }
+
+    fileprivate func updateModel()  {
+        if let components = urlComponents, let host = components.host {
+            headerModel.setValue(imageURL: try! Router.favicon(domain: host) .asURL(),
+                                 address: host)
+            loginInfoModel.initializeFillText(server: host,
+                                              protocal: components.scheme!)
+        }
     }
 
     func beforeQuit() {
-        MagicalRecord.cleanUp()
-        groupContainerURL?.stopAccessingSecurityScopedResource()
+        if let containerURL = groupContainerURL {
+            MagicalRecord.cleanUp()
+            containerURL.stopAccessingSecurityScopedResource()
+        }
     }
 }

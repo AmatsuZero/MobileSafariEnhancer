@@ -21,4 +21,7 @@ extension UIColor {
     open class var borderOpacity: UIColor {
         return UIColor.black.withAlphaComponent(0.10)
     }
+    open class var background: UIColor {
+        return UIColor.black.withAlphaComponent(0.7)
+    }
 }

@@ -10,10 +10,18 @@ import UIKit
 
 class CreateTaskViewController: UIViewController {
 
+    private let presentTransitionDelegate = EXModalTransitionExtensionDelegate()
+
     let createTaskView = CreateTaskView(frame: .zero)
-    private lazy var fileExplorer: FileExplorerViewController = {
-        let fevc = FileExplorerViewController(directoryURL: Store.shared.groupContainerURL ?? .documentDirectory)
-        return fevc
+    private lazy var fileExplorer: FileExplorerViewController? = {
+        if let downloadedURL = Store.shared.groupContainerURL?.appendingPathComponent("Downloaded") {
+            let feevc = FileExplorerViewController(directoryURL: downloadedURL)
+            feevc.delegate = self
+            feevc.transitioningDelegate = presentTransitionDelegate
+            feevc.modalPresentationStyle = .custom
+            return feevc
+        }
+        return nil
     }()
 
     override func viewDidLoad() {
@@ -35,8 +43,21 @@ class CreateTaskViewController: UIViewController {
     }
 
     @objc func test() {
-        present(fileExplorer, animated: true) {
+        if let vc = fileExplorer {
+            present(vc, animated: true) {
 
+            }
         }
+    }
+}
+
+extension CreateTaskViewController: FileExplorerViewControllerDelegate {
+    
+    func fileExplorerViewControllerDidFinish(_ controller: FileExplorerViewController) {
+
+    }
+
+    func fileExplorerViewController(_ controller: FileExplorerViewController, didChooseURLs urls: [URL]) {
+
     }
 }

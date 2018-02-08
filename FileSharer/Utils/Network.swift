@@ -46,8 +46,13 @@ enum Router: URLConvertible, URLRequestConvertible {
 }
 
 class Network {
-    let sessionManager = SessionManager(configuration: .default)
+    
+    private let sessionManager = SessionManager(configuration: .default)
     static let shared = Network()
+
+    func setCookieStorage(_ cookieStorage: HTTPCookieStorage?) {
+        sessionManager.session.configuration.httpCookieStorage = cookieStorage
+    }
 
     func valid(url: URL) -> Promise<HTTPURLResponse?> {
         return Promise { resolve, reject in

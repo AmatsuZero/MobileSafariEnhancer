@@ -32,7 +32,7 @@ final class RootViewController: UIViewController {
     }
 
     fileprivate func configureUI() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        view.backgroundColor = .background
         view.addSubview(contentView)
         contentView.layer.cornerRadius = 7
         contentView.layer.borderWidth = 1
