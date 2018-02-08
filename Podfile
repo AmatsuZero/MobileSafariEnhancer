@@ -16,6 +16,7 @@ def shared_pods
   pod 'SwipeCellKit'
   pod 'KeychainAccess'
   pod 'DZNEmptyDataSet'
+  pod "GCDWebServer/WebDAV", "~> 3.0"
 end
 
 target 'FileSharer' do
