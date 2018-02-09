@@ -16,7 +16,6 @@ def shared_pods
   pod 'SwipeCellKit'
   pod 'KeychainAccess'
   pod 'DZNEmptyDataSet'
-  pod "GCDWebServer/WebDAV", "~> 3.0"
 end
 
 target 'FileSharer' do
@@ -30,7 +29,7 @@ target 'MobileSafariEnhancer' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   shared_pods
   pod 'Material'
-
+  pod "GCDWebServer/WebDAV", "~> 3.0"
 end
 
 post_install do |installer|
