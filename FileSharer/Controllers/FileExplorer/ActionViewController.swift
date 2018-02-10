@@ -34,8 +34,10 @@ final class ActionsViewController: UIViewController {
         extendedLayoutIncludesOpaqueBars = false
         edgesForExtendedLayout = []
         view.addSubview(toolbar)
-        toolbar.translatesAutoresizingMaskIntoConstraints = false
         toolbar.sizeToFit()
+        toolbar.snp.makeConstraints { maker in
+            maker.left.right.equalToSuperview()
+        }
         toolbar.pinToBottom(of: view)
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .action,

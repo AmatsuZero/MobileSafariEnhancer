@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import FontAwesome_swift
 
 protocol Editable {
     func setEditing(_ editing: Bool, animated: Bool)
@@ -232,105 +233,5 @@ extension ItemCell: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
-    }
-}
-
-final class CollectionViewHeader: UICollectionReusableView {
-    private let segmentedControl: UISegmentedControl
-    var sortModeChangeAction: (SortMode) -> Void = { _ in }
-
-    override init(frame: CGRect) {
-        segmentedControl = UISegmentedControl(items: ["Name", "Date"])
-        super.init(frame: frame)
-        segmentedControl.sizeToFit()
-        segmentedControl.frame.size = CGSize(width: 160.0, height: segmentedControl.bounds.height)
-        segmentedControl.autoresizingMask = []
-        segmentedControl.addTarget(self, action: #selector(CollectionViewHeader.handleSegmentedControlValueChanged), for: .valueChanged)
-        addSubview(segmentedControl)
-        sortMode = .name
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        segmentedControl.center = CGPoint(x: bounds.midX, y: bounds.midY)
-    }
-
-    var sortMode: SortMode {
-        get {
-            switch segmentedControl.selectedSegmentIndex {
-            case 0: return .name
-            case 1: return .date
-            default: fatalError()
-            }
-        }
-        set(newValue) {
-            switch newValue {
-            case .name: segmentedControl.selectedSegmentIndex = 0
-            case .date: segmentedControl.selectedSegmentIndex = 1
-            }
-        }
-    }
-
-    @objc
-    private func handleSegmentedControlValueChanged() {
-        sortModeChangeAction(sortMode)
-    }
-}
-
-final class CollectionViewFooter: UICollectionReusableView {
-    var leftInset: CGFloat = LayoutConstants.separatorLeftInset
-    private var separators = [SeparatorView]()
-
-    override init(frame: CGRect) {
-        for _ in 0..<15 {
-            separators.append(SeparatorView())
-        }
-        super.init(frame: frame)
-        separators.forEach({addSubview($0)})
-        tintColor = ColorPallete.gray
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        for (i, separator) in separators.enumerated() {
-            let size = CGSize(width: bounds.width - leftInset, height: 1.0)
-            separator.frame.size = separator.sizeThatFits(size)
-            separator.frame.origin = CGPoint(x: leftInset, y: CGFloat(i+1) * 64.0 - size.height)
-        }
-    }
-
-    override var tintColor: UIColor! {
-        get {
-            return super.tintColor
-        }
-        set(newValue) {
-            super.tintColor = newValue
-            adjustAfterTintColorChange()
-        }
-    }
-
-    override func tintColorDidChange() {
-        adjustAfterTintColorChange()
-    }
-
-    private func adjustAfterTintColorChange() {
-        separators.forEach({$0.backgroundColor = tintColor})
-    }
-}
-
-final class SeparatorView: UIView {
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: size.width, height: 1.0/UIScreen.main.scale)
-    }
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: CGFloat.greatestFiniteMagnitude, height: 1.0/UIScreen.main.scale)
     }
 }

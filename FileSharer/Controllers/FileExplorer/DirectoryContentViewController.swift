@@ -7,6 +7,7 @@
 //
 
 import SnapKit
+import FontAwesome_swift
 
 protocol DirectoryContentViewControllerDelegate: class {
     func directoryContentViewController(_ controller: DirectoryContentViewController, didChangeEditingStatus isEditing: Bool)
@@ -19,10 +20,10 @@ final class DirectoryContentViewController: UICollectionViewController {
     weak var delegate: DirectoryContentViewControllerDelegate?
 
     fileprivate let viewModel: DirectoryContentViewModel
-
-    private let toolbar: UIToolbar
     private var toolbarBottomConstraint: Constraint?
+    private let toolbar: UIToolbar
     private var isFirstLayout = true
+
 
     override var collectionViewLayout: UICollectionViewFlowLayout {
         get {
@@ -33,11 +34,9 @@ final class DirectoryContentViewController: UICollectionViewController {
     init(viewModel: DirectoryContentViewModel) {
         self.viewModel = viewModel
         self.toolbar = UIToolbar.makeToolbar()
-
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 200, height: 64.0)
         layout.minimumLineSpacing = 0
-
         super.init(collectionViewLayout: layout)
         viewModel.delegate = self
         collectionView?.emptyDataSetSource = self
@@ -75,10 +74,11 @@ final class DirectoryContentViewController: UICollectionViewController {
         collectionView.alwaysBounceVertical = true
         collectionView.allowsMultipleSelection = true
         collectionView.addSubview(toolbar)
-
-        self.toolbarBottomConstraint = toolbar.pinToBottom(of: view)
-        self.toolbarBottomConstraint?.update(offset: toolbar.bounds.height)
-
+        toolbarBottomConstraint = toolbar.pinToBottom(of: view)
+        toolbarBottomConstraint?.update(offset: toolbar.bounds.height)
+        toolbar.snp.makeConstraints { maker in
+            maker.trailing.equalTo(view)
+        }
         syncWithViewModel(false)
     }
 
@@ -121,14 +121,16 @@ final class DirectoryContentViewController: UICollectionViewController {
 
     func syncToolbarWithViewModel() {
         let selectActionButton = !viewModel.isSelectActionHidden ? UIBarButtonItem(title: viewModel.selectActionTitle,
-                                                                                   style: .plain,
-                                                                                   target: self,
-                                                                                   action: #selector(DirectoryContentViewController.handleSelectButtonTap)) : nil
+                                                                                              style: .plain,
+                                                                                              target: self,
+                                                                                              action: #selector(DirectoryContentViewController.handleSelectButtonTap)) : nil
+        selectActionButton?.tintColor = .yellowTheme
         selectActionButton?.isEnabled = viewModel.isSelectActionEnabled
         let deleteActionButton = !viewModel.isDeleteActionHidden ? UIBarButtonItem(title: viewModel.deleteActionTitle,
                                                                                    style: .plain,
                                                                                    target: self,
                                                                                    action: #selector(DirectoryContentViewController.handleDeleteButtonTap)) : nil
+        deleteActionButton?.tintColor = selectActionButton?.tintColor
         deleteActionButton?.isEnabled = viewModel.isDeleteActionEnabled
         toolbar.items = [
             selectActionButton,
