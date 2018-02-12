@@ -7,28 +7,30 @@
 //
 
 import SnapKit
+import DGActivityIndicatorView
 
 extension UIViewController {
     @nonobjc static var kActivityIndicatorKey = "fer_activityIndicatorView"
-    var activityIndicatorView: UIActivityIndicatorView? {
+    var activityIndicatorView: DGActivityIndicatorView? {
         get {
-            return objc_getAssociatedObject(self, &UIViewController.kActivityIndicatorKey) as? UIActivityIndicatorView
+            return objc_getAssociatedObject(self, &UIViewController.kActivityIndicatorKey) as? DGActivityIndicatorView
         }
         set(newValue) {
             objc_setAssociatedObject(self, &UIViewController.kActivityIndicatorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
     func showLoadingIndicator() {
-        guard self.activityIndicatorView == nil else { return }
-        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        activityIndicatorView.color = .gray
-        activityIndicatorView.hidesWhenStopped = true
-        activityIndicatorView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
+        guard self.activityIndicatorView == nil,
+            let activityIndicatorView = DGActivityIndicatorView(type: .ballSpinFadeLoader,
+                                                                tintColor: .yellowTheme) else { return }
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
         activityIndicatorView.autoresizingMask = [.flexibleTopMargin,
                                                   .flexibleLeftMargin,
                                                   .flexibleBottomMargin,
                                                   .flexibleRightMargin]
-        view.addSubview(activityIndicatorView)
         self.activityIndicatorView = activityIndicatorView
         activityIndicatorView.startAnimating()
     }
@@ -48,7 +50,6 @@ extension UIViewController {
         get {
             return activeNavigationItem?.rightBarButtonItem
         }
-
         set(newValue) {
             navigationItem.rightBarButtonItem = newValue
             activeNavigationItem?.rightBarButtonItem = newValue

@@ -80,7 +80,7 @@ final class CollectionViewFooter: UICollectionReusableView {
             separators.append(SeparatorView())
         }
         super.init(frame: frame)
-        separators.forEach({addSubview($0)})
+        separators.forEach {addSubview($0)}
         tintColor = ColorPallete.gray
     }
 
